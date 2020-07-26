@@ -10,7 +10,7 @@ import Cocoa
 import SwiftUI
 import CoreLocation
 
-let filename = "elementData.json"
+let filename = "deptData.json"
 let vapper = true
 var elementData: [Element] = load(filename)
 let dev = true
@@ -21,7 +21,7 @@ func load<T: Decodable>(_ filename: String) -> T {
     if FileManager().fileExists(atPath: filename) {
         file = URL(fileURLWithPath: filename)
     } else if vapper {
-        return [Element(科室名称: "肾内科", 类别: "内科")] as! T
+        return [Element(科室名称: "超声科", 类别: "检查")] as! T
     } else {
         file = Bundle.main.url(forResource: filename, withExtension: nil)!
     }
@@ -42,7 +42,7 @@ func load<T: Decodable>(_ filename: String) -> T {
         return try decoder.decode(T.self, from: data)
     } catch {
         if dev {
-            return [Element(科室名称: "肾内科", 类别: "内科")] as! T
+            return [Element(科室名称: "超声科", 类别: "检查")] as! T
         }
         else {
             fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
