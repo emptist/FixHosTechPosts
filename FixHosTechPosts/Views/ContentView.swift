@@ -10,9 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
-        //LabeledTextField()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        MainView().environmentObject(UserData())
     }
 }
 

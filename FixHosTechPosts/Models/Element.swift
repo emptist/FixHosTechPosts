@@ -9,12 +9,37 @@
 import SwiftUI
 import CoreLocation
 
+
+
+struct DeviceUnit: Hashable, Codable, Identifiable {
+    let id = UUID()
+    var 设备名称: String
+    var 台数: Float
+    var 每月开放天数: Float
+    var 每天开放小时: Float
+}
+
+struct DoctorUnit: Hashable, Codable, Identifiable {
+    let id = UUID()
+    var 小组名称: String
+    var checkItems: [CheckItem]
+}
+
+struct CheckItem: Hashable, Codable, Identifiable {
+    let id = UUID()
+    var 项目名称: String
+    var 每次所需分钟: Float
+    var 年总次数: Float
+}
+
 struct Element: Hashable, Codable, Identifiable {
     
     //abc
     var 备注: String = "" // 补充资料与特殊情形
  
     //def
+    var deviceUnits: [DeviceUnit]?
+    var doctorUnits: [DoctorUnit]?
     var 法定每年工作日: Float = 250
     
     //ghi
