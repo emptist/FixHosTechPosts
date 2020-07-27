@@ -12,19 +12,23 @@ import SwiftUI
 struct DetailItem: View {
     @EnvironmentObject var userData: UserData
     var elementIndex: Int
-    var 小组名称: String
-    var 项目名称: String
-//    var numberFormatter: NumberFormatter {
-//        let f = NumberFormatter()
-//        f.numberStyle = .decimal
-//        return f
-//    }
+    var 医师组名称: String
+    @State var itemName: String = ""
+    @State var minutesPerCase: Float = 0
+    @State var casesPerYear: Float = 0
+    
     
     var body: some View {
         HStack {
-            Text("项目名称")
-//            TextField("每次所需分钟",value: $userData.elements[elementIndex].doctorUnits[小组名称][项目名称].每次所需分钟,formatter: numberFormatter)
-            Text("年总次数")
+            TextField("项目名称",text: $itemName).hLabel(label: "项目名称")
+            TextField("每次所需分钟",value: $minutesPerCase, formatter: numberFormatter).hLabel(label: "每次所需分钟")
+            TextField("年总次数",value: $casesPerYear, formatter: numberFormatter).hLabel(label: "年总次数")
+            
+            Button(action: {
+                self.userData.addItem(elementIndex:self.elementIndex,医师组名称: self.医师组名称,项目名称: self.itemName, 每次所需分钟: self.minutesPerCase, 年总次数: self.casesPerYear)
+            }) {
+                Text("新增诊疗项目")
+            }
         }
     }
 }

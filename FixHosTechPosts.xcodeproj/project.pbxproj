@@ -17,6 +17,9 @@
 		480A631324CDAD1300037D9E /* DetailDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631224CDAD1300037D9E /* DetailDevice.swift */; };
 		480A631524CDAD2B00037D9E /* DetailDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631424CDAD2B00037D9E /* DetailDoctor.swift */; };
 		480A631724CDB73000037D9E /* DetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631624CDB73000037D9E /* DetailItem.swift */; };
+		48AF0D1C24CEC1DA00265A44 /* NavigationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */; };
+		48AF0D1E24CEC26E00265A44 /* DeviceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */; };
+		48AF0D2024CEC2A300265A44 /* DoctorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1F24CEC2A300265A44 /* DoctorGroup.swift */; };
 		48C4058424CCD1BF00C9B5F0 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4058324CCD1BF00C9B5F0 /* LabeledTextField.swift */; };
 		48FA2DE124C9C6CA009EA536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA2DE024C9C6CA009EA536 /* AppDelegate.swift */; };
 		48FA2DE324C9C6CA009EA536 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA2DE224C9C6CA009EA536 /* ContentView.swift */; };
@@ -38,6 +41,9 @@
 		480A631224CDAD1300037D9E /* DetailDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDevice.swift; sourceTree = "<group>"; };
 		480A631424CDAD2B00037D9E /* DetailDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDoctor.swift; sourceTree = "<group>"; };
 		480A631624CDB73000037D9E /* DetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItem.swift; sourceTree = "<group>"; };
+		48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTab.swift; sourceTree = "<group>"; };
+		48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroup.swift; sourceTree = "<group>"; };
+		48AF0D1F24CEC2A300265A44 /* DoctorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorGroup.swift; sourceTree = "<group>"; };
 		48C4058324CCD1BF00C9B5F0 /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
 		48FA2DDD24C9C6CA009EA536 /* FixHosTechPosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixHosTechPosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FA2DE024C9C6CA009EA536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 			children = (
 				480A630A24CD87B700037D9E /* NavigationPrimary.swift */,
 				480A630C24CD885000037D9E /* NavigationDetail.swift */,
+				48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */,
+				48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */,
+				48AF0D1F24CEC2A300265A44 /* DoctorGroup.swift */,
 				480A630E24CD88F500037D9E /* MainView.swift */,
 				480A630824CD877800037D9E /* ElementList.swift */,
 				480A630624CD876000037D9E /* ElementRow.swift */,
@@ -213,6 +222,8 @@
 				48FA2DE324C9C6CA009EA536 /* ContentView.swift in Sources */,
 				480A631324CDAD1300037D9E /* DetailDevice.swift in Sources */,
 				480A630B24CD87B700037D9E /* NavigationPrimary.swift in Sources */,
+				48AF0D1E24CEC26E00265A44 /* DeviceGroup.swift in Sources */,
+				48AF0D1C24CEC1DA00265A44 /* NavigationTab.swift in Sources */,
 				48FA2DFD24C9C783009EA536 /* Data.swift in Sources */,
 				480A630524CD864F00037D9E /* UserData.swift in Sources */,
 				480A630724CD876000037D9E /* ElementRow.swift in Sources */,
@@ -222,6 +233,7 @@
 				480A631524CDAD2B00037D9E /* DetailDoctor.swift in Sources */,
 				48FA2DFC24C9C783009EA536 /* Element.swift in Sources */,
 				480A631124CD98EC00037D9E /* DetailHead.swift in Sources */,
+				48AF0D2024CEC2A300265A44 /* DoctorGroup.swift in Sources */,
 				48FA2DE124C9C6CA009EA536 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

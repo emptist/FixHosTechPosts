@@ -33,4 +33,15 @@ final class UserData: ObservableObject {
         let device = DeviceUnit(设备组名称: 设备名称, 台数: 台数, 每月开放天数: 每月开放天数, 每天开放小时: 每天开放小时)
         elements[elementIndex].deviceUnits.append(device)
     }
+    
+    func addDoctorUnit(elementIndex: Int, 医师组名称: String) -> Void {
+        let doctorUnit = DoctorUnit(医师组名称: 医师组名称, checkItems: [])
+        elements[elementIndex].doctorUnits.append(doctorUnit)
+    }
+    
+    func addItem(elementIndex: Int, 医师组名称: String, 项目名称: String, 每次所需分钟: Float, 年总次数: Float) -> Void {
+        let item = CheckItem(项目名称: 项目名称, 每次所需分钟: 每次所需分钟, 年总次数: 年总次数)
+        guard let doctorUnitIndex = elements[elementIndex].doctorUnits.firstIndex(where: {unit in unit.医师组名称 == 医师组名称}) else {return}
+        elements[elementIndex].doctorUnits[doctorUnitIndex].checkItems.append(item)
+    }
 }
