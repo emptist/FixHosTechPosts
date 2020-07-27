@@ -23,17 +23,27 @@ struct NavigationTab: View {
     
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        //VStack(alignment: .leading, spacing: 12) {
+        VStack {
             DetailHead(elementIndex:elementIndex)
             
             TabView {
                 DeviceGroup(elementIndex: elementIndex)
                     .tabItem {Text("设备组")}
+                    //.position(.zero)
+                    .padding()
+                    //.offset(x: 0, y: -200)
+
                 
                 DoctorGroup(elementIndex: elementIndex)
                     .tabItem {Text("医师组")}
+                    .padding()
+                    
+                    //.offset(x: 0, y: -200)
+
             }
         }
+        
     }
 }
 

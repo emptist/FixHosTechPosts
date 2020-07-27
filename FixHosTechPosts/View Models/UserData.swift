@@ -29,8 +29,8 @@ final class UserData: ObservableObject {
         elements.append(Element(科室名称:newName))
     }
     
-    func addDeviceUnit(elementIndex:Int, 设备名称: String, 台数: Float, 每月开放天数: Float, 每天开放小时: Float) -> Void {
-        let device = DeviceUnit(设备组名称: 设备名称, 台数: 台数, 每月开放天数: 每月开放天数, 每天开放小时: 每天开放小时)
+    func addDeviceUnit(elementIndex:Int, 设备名称: String, 台数: Float, 每月开放天数: Float, 每天开放小时: Float,机器技师比:Float,机器护士比: Float, 机器医师比: Float) -> Void {
+        let device = DeviceUnit(设备组名称: 设备名称, 台数: 台数, 每月开放天数: 每月开放天数, 每天开放小时: 每天开放小时,机器技师比:机器技师比,机器护士比: 机器护士比, 机器医师比: 机器医师比)
         elements[elementIndex].deviceUnits.append(device)
     }
     

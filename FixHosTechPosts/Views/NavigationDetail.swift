@@ -39,9 +39,10 @@ struct NavigationDetail: View {
                         DoctorGroup(elementIndex: elementIndex)
                     }
                 }
-            }.padding()
-                .frame(maxWidth: 1300)
-                .offset(x: 0, y: -1)
+            }
+            .padding()
+            .frame(maxWidth: 1300)
+            .offset(x: 0, y: -1)
         }
     }
 }

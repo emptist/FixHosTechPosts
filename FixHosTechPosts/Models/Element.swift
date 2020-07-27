@@ -19,6 +19,10 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     var 台数: Float
     var 每月开放天数: Float
     var 每天开放小时: Float
+    var 机器技师比: Float //= 1
+    var 机器护士比: Float //= 0.2
+    var 机器医师比: Float //= 0
+
 }
 
 struct DoctorUnit: Codable, Equatable, Hashable, Identifiable {
@@ -54,7 +58,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 管理及机动护士人数: Float?
     
     //jkl
-    var 开放床位数 : Float = 0
+    var 开放床位数: Float = 0
     var 科室名称: String
     var 类别: String = ""
     
