@@ -33,15 +33,15 @@ struct DetailDevice: View {
                 .hLabel(label: "每月开放天数")
             TextField("每天开放小时",value: $openHoursPerDay,formatter: numberFormatter)
                 .hLabel(label: "每天开放小时")
-            TextField("机器技师比",value: $techsPerDevice,formatter: numberFormatter)
-                .hLabel(label: "机器技师比")
-            TextField("机器护士比",value: $nursesPerDevice,formatter: numberFormatter)
-                .hLabel(label: "机器护士比")
-            TextField("机器医师比",value: $doctorsPerDevice,formatter: numberFormatter)
-                .hLabel(label: "机器医师比")
+            TextField("配备技师数",value: $techsPerDevice,formatter: numberFormatter)
+                .hLabel(label: "配备技师数")
+            TextField("配备护士数",value: $nursesPerDevice,formatter: numberFormatter)
+                .hLabel(label: "配备护士数")
+            TextField("配备医师数",value: $doctorsPerDevice,formatter: numberFormatter)
+                .hLabel(label: "配备医师数")
             
             Button(action: {
-                self.userData.addDeviceUnit(elementIndex:self.elementIndex,设备名称: self.deviceName, 台数: self.numOfDevs, 每月开放天数: self.openDaysPerMonth, 每天开放小时: self.openHoursPerDay,机器技师比:self.techsPerDevice,机器护士比:self.nursesPerDevice,机器医师比:self.doctorsPerDevice)
+                self.userData.addDeviceUnit(elementIndex:self.elementIndex,设备名称: self.deviceName, 台数: self.numOfDevs, 每月开放天数: self.openDaysPerMonth, 每天开放小时: self.openHoursPerDay,配备技师数:self.techsPerDevice,配备护士数:self.nursesPerDevice,配备医师数:self.doctorsPerDevice)
             }) {
                 Text("新增设备组")
             }

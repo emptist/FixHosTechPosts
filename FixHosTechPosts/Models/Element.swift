@@ -19,10 +19,17 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     var 台数: Float
     var 每月开放天数: Float
     var 每天开放小时: Float
-    var 机器技师比: Float //= 1
-    var 机器护士比: Float //= 0.2
-    var 机器医师比: Float //= 0
-
+    var 配备技师数: Float //= 1
+    var 配备护士数: Float //= 0.2
+    var 配备医师数: Float //= 0
+    
+    var 每年开放小时数: Float {
+        每天开放小时 * 每月开放天数 * 12
+    }
+    
+    var 每年配备技师总工时: Float {
+        每年开放小时数 * 配备技师数
+    }
 }
 
 struct DoctorUnit: Codable, Equatable, Hashable, Identifiable {
