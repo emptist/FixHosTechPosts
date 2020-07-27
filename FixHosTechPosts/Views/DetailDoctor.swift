@@ -9,20 +9,27 @@
 import SwiftUI
 
 struct DetailDoctor: View {
+    @EnvironmentObject var userData: UserData
+    var elementIndex: Int
+
     var body: some View {
-        HStack {
+        VStack {
             Text("小组名称")
-            DetailItem()
-            DetailItem()
-            DetailItem()
+            //@ViewBuilder
+            List {
+                Text("小组名称")
+//                DetailItem(elementIndex:elementIndex,小组名称:"",项目名称:"")
+//                DetailItem(elementIndex:elementIndex,小组名称:"",项目名称:"")
+            }
+            
         }
         
         
     }
 }
 
-struct DetailDoctor_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailDoctor()
-    }
-}
+//struct DetailDoctor_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetailDoctor()
+//    }
+//}

@@ -11,35 +11,42 @@ import CoreLocation
 
 
 
-struct DeviceUnit: Hashable, Codable, Identifiable {
-    let id = UUID()
-    var 设备名称: String
+struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
+    var id: String {
+        设备组名称
+    }
+    var 设备组名称: String
     var 台数: Float
     var 每月开放天数: Float
     var 每天开放小时: Float
 }
 
-struct DoctorUnit: Hashable, Codable, Identifiable {
-    let id = UUID()
-    var 小组名称: String
-    var checkItems: [CheckItem]
+struct DoctorUnit: Codable, Equatable, Hashable, Identifiable {
+    var id: String {
+        医师组名称
+    }
+    var 医师组名称: String
+    var checkItems: Array<CheckItem>
 }
 
-struct CheckItem: Hashable, Codable, Identifiable {
-    let id = UUID()
+struct CheckItem: Codable, Equatable, Hashable, Identifiable {
+    var id: String {
+        项目名称
+    } //= UUID()
     var 项目名称: String
     var 每次所需分钟: Float
     var 年总次数: Float
 }
 
-struct Element: Hashable, Codable, Identifiable {
+struct Element: Codable, Equatable, Hashable, Identifiable {
     
     //abc
     var 备注: String = "" // 补充资料与特殊情形
  
     //def
-    var deviceUnits: [DeviceUnit]?
-    var doctorUnits: [DoctorUnit]?
+    var deviceUnits: Array<DeviceUnit> = []
+    var doctorUnits: Array<DoctorUnit> = []
+    
     var 法定每年工作日: Float = 250
     
     //ghi
@@ -62,7 +69,7 @@ struct Element: Hashable, Codable, Identifiable {
     var 目前治疗师人数: Float?
     
     //pqr
-    var 全部设备 = [Instrument]()
+    
     
     //stu
     var 上年度执业医师人数: Float?
@@ -112,12 +119,6 @@ struct Element: Hashable, Codable, Identifiable {
     
     
     
-    enum Category: String, CaseIterable, Codable, Hashable {
-        case 门诊 = "门诊"
-        case 急诊 = "急诊"
-        case 病房 = "病房"
-        case 医技 = "医技"
-    }
     
 }
 

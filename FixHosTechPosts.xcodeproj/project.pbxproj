@@ -23,10 +23,8 @@
 		48FA2DE524C9C6D3009EA536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FA2DE424C9C6D3009EA536 /* Assets.xcassets */; };
 		48FA2DE824C9C6D3009EA536 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FA2DE724C9C6D3009EA536 /* Preview Assets.xcassets */; };
 		48FA2DEB24C9C6D3009EA536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48FA2DE924C9C6D3009EA536 /* Main.storyboard */; };
-		48FA2DFB24C9C783009EA536 /* CommonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA2DF724C9C782009EA536 /* CommonConstants.swift */; };
 		48FA2DFC24C9C783009EA536 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA2DF824C9C782009EA536 /* Element.swift */; };
 		48FA2DFD24C9C783009EA536 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA2DF924C9C783009EA536 /* Data.swift */; };
-		48FA2DFF24C9D72E009EA536 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA2DFE24C9D72E009EA536 /* Instrument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,10 +47,8 @@
 		48FA2DEA24C9C6D3009EA536 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48FA2DEC24C9C6D3009EA536 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48FA2DED24C9C6D3009EA536 /* FixHosTechPosts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FixHosTechPosts.entitlements; sourceTree = "<group>"; };
-		48FA2DF724C9C782009EA536 /* CommonConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonConstants.swift; sourceTree = "<group>"; };
 		48FA2DF824C9C782009EA536 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		48FA2DF924C9C783009EA536 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		48FA2DFE24C9D72E009EA536 /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +105,8 @@
 		48FA2DF324C9C6E9009EA536 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				48FA2DF724C9C782009EA536 /* CommonConstants.swift */,
 				48FA2DF924C9C783009EA536 /* Data.swift */,
 				48FA2DF824C9C782009EA536 /* Element.swift */,
-				48FA2DFE24C9D72E009EA536 /* Instrument.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,13 +216,11 @@
 				48FA2DFD24C9C783009EA536 /* Data.swift in Sources */,
 				480A630524CD864F00037D9E /* UserData.swift in Sources */,
 				480A630724CD876000037D9E /* ElementRow.swift in Sources */,
-				48FA2DFB24C9C783009EA536 /* CommonConstants.swift in Sources */,
 				48C4058424CCD1BF00C9B5F0 /* LabeledTextField.swift in Sources */,
 				480A631724CDB73000037D9E /* DetailItem.swift in Sources */,
 				480A630D24CD885000037D9E /* NavigationDetail.swift in Sources */,
 				480A631524CDAD2B00037D9E /* DetailDoctor.swift in Sources */,
 				48FA2DFC24C9C783009EA536 /* Element.swift in Sources */,
-				48FA2DFF24C9D72E009EA536 /* Instrument.swift in Sources */,
 				480A631124CD98EC00037D9E /* DetailHead.swift in Sources */,
 				48FA2DE124C9C6CA009EA536 /* AppDelegate.swift in Sources */,
 			);

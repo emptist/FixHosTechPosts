@@ -8,6 +8,11 @@
 
 import SwiftUI
 
+var numberFormatter: NumberFormatter {
+    let f = NumberFormatter()
+    f.numberStyle = .decimal
+    return f
+}
 
 struct MainView: View {
     @EnvironmentObject var userData: UserData

@@ -10,10 +10,7 @@ import SwiftUI
 
 struct DetailHead: View {
     @EnvironmentObject var userData: UserData
-    var element:Element
-    var elementIndex: Int {
-        userData.elements.firstIndex(where: { $0.id == element.id })!
-    }
+    var elementIndex: Int
     
     var body: some View {
         HStack {
