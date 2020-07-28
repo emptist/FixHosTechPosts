@@ -22,6 +22,8 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     var 配备技师数: Float //= 1
     var 配备护士数: Float //= 0.2
     var 配备医师数: Float //= 0
+    var 配备治疗师数: Float
+    var 配备文员数: Float
     
     var 每年开放小时数: Float {
         每天开放小时 * 每月开放天数 * 12
@@ -36,7 +38,12 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     var 配备医师每年总工时: Float {
         每年开放小时数 * 配备医师数
     }
-    
+    var 配备治疗师每年总工时: Float {
+        每年开放小时数 * 配备治疗师数
+    }
+    var 配备文员每年总工时: Float {
+        每年开放小时数 * 配备文员数
+    }
     func 该组需要技师人数(每位技师每年应出勤小时数: Float) -> Float {
         配备技师每年总工时 / 每位技师每年应出勤小时数
     }
@@ -45,6 +52,12 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     }
     func 该组需要医师人数(每位医师每年应出勤小时数: Float) -> Float {
         配备医师每年总工时 / 每位医师每年应出勤小时数
+    }
+    func 该组需要治疗师人数(每位治疗师每年应出勤小时数: Float) -> Float {
+        配备治疗师每年总工时 / 每位治疗师每年应出勤小时数
+    }
+    func 该组需要文员人数(每位文员每年应出勤小时数: Float) -> Float {
+        配备文员每年总工时 / 每位文员每年应出勤小时数
     }
     var 备注: String = "人机绑定"
 }
@@ -69,6 +82,8 @@ struct CheckItem: Codable, Equatable, Hashable, Identifiable {
     var 配备技师数: Float //= 1
     var 配备护士数: Float //= 0.2
     var 配备医师数: Float //= 0
+    var 配备治疗师数: Float
+    var 配备文员数: Float
     var 备注: String = "人机不绑定"
     
 }
@@ -85,8 +100,10 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 法定每年工作日: Float = 250
     
     //ghi
+    var 管理及机动技师人数: Float?
     var 管理及机动医师人数: Float?
     var 管理及机动护士人数: Float?
+    var 管理及机动文员人数: Float?
     
     //jkl
     var 开放床位数: Float = 0
@@ -102,16 +119,21 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 每年技师人均其他非工作小时数: Float = 20
     var 每年治疗师人均应休假小时数: Float = 60
     var 每年治疗师人均其他非工作小时数: Float = 20
+    var 每年文员人均应休假小时数: Float = 35
+    var 每年文员人均其他非工作小时数: Float = 15
     
     var 每天技师应出勤小时: Float = 8
     var 每天治疗师应出勤小时: Float = 8
     var 每天医师应出勤小时: Float = 8
     var 每天护士应出勤小时: Float = 7
+    var 每天文员应出勤小时: Float = 7
     var 目前护士人数: Float = 0
     var 目前技师人数: Float?
     var 目前医生人数: Float = 0
     var 目前治疗师人数: Float?
+    var 目前文员人数: Float?
     
+    var 年出院人次数: Float = 0
     //pqr
     
     
@@ -158,6 +180,21 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
         return n
     }
     
+    var 各设备组共需治疗师人数: Float {
+        var n:Float = 0
+        for each in deviceUnits {
+            n += each.该组需要治疗师人数(每位治疗师每年应出勤小时数: 每位治疗师每年应出勤总工时)
+        }
+        return n
+    }
+    
+    var 各设备组共需文员人数: Float {
+        var n:Float = 0
+        for each in deviceUnits {
+            n += each.该组需要文员人数(每位文员每年应出勤小时数: 每位文员每年应出勤总工时)
+        }
+        return n
+    }
     
     var id = UUID()
     var isConfirmed: Bool {
@@ -191,6 +228,13 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 每位治疗师每年实际出勤总工时: Float {
         每位治疗师每年应出勤总工时 - 每年预估治疗师人均休假小时
     }
+    var 每位文员每年应出勤总工时: Float {
+        法定每年工作日 * 每天文员应出勤小时
+    }
+    var 每位文员每年实际出勤总工时: Float {
+        每位文员每年应出勤总工时 - 每年预估文员人均休假小时
+    }
+
 //    var 每位医师每年应出勤总工时: Float {
 //        法定每年工作日 * 每天治疗师应出勤小时
 //    }
@@ -207,6 +251,10 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 每年预估治疗师人均休假小时: Float {
         每年治疗师人均应休假小时数 + 每年治疗师人均其他非工作小时数
     }
+    var 每年预估文员人均休假小时: Float {
+        每年文员人均应休假小时数 + 每年文员人均其他非工作小时数
+    }
+    
     var name: String {
         return 科室名称
     }

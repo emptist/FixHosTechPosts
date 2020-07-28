@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Devices: View {
+struct DeviceUnits: View {
     
     @EnvironmentObject var userData: UserData
     var elementIndex: Int
@@ -18,7 +18,7 @@ struct Devices: View {
         VStack {
             ForEach(userData.elements[elementIndex].deviceUnits) { unit in
                 // MARK: Replace this .constant to let unit changeable
-                DeviceView(deviceUnit: .constant(unit))
+                DeviceUnitView(deviceUnit: .constant(unit))
             }
         }
         
@@ -26,7 +26,7 @@ struct Devices: View {
     
 }
 
-struct DeviceView: View {
+struct DeviceUnitView: View {
     @Binding var deviceUnit: DeviceUnit
     var body: some View {
         HStack {
