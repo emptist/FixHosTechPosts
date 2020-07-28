@@ -37,7 +37,7 @@ struct NavigationDetail: View {
                     }
                     Spacer()
                     // 服务多台设备,医师和护士,根据所支持的检查项目分组
-                    Section(header: Text("医师组").font(.headline).foregroundColor(.purple)) {
+                    Section(header: Text("人员组").font(.headline).foregroundColor(.purple)) {
                         DoctorGroup(elementIndex: elementIndex)
                     }
                 }

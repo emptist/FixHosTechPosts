@@ -64,9 +64,9 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
 
 struct DoctorUnit: Codable, Equatable, Hashable, Identifiable {
     var id: String {
-        医师组名称
+        人员组名称
     }
-    var 医师组名称: String
+    var 人员组名称: String
     var checkItems: Array<CheckItem>
     var 备注: String = ""
 }
@@ -103,6 +103,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 管理及机动技师人数: Float?
     var 管理及机动医师人数: Float?
     var 管理及机动护士人数: Float?
+    var 管理及机动治疗师人数: Float?
     var 管理及机动文员人数: Float?
     
     //jkl
@@ -160,7 +161,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需医师人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要医师人数(每位医师每年应出勤小时数: 每位医师每年应出勤总工时)
+            n += each.该组需要医师人数(每位医师每年应出勤小时数: 每位医师每年应出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
@@ -168,7 +169,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需护士人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要护士人数(每位护士每年应出勤小时数: 每位护士每年应出勤总工时)
+            n += each.该组需要护士人数(每位护士每年应出勤小时数: 每位护士每年应出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
@@ -176,7 +177,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需技师人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要技师人数(每位技师每年应出勤小时数: 每位技师每年应出勤总工时)
+            n += each.该组需要技师人数(每位技师每年应出勤小时数: 每位技师每年应出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
@@ -184,7 +185,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需治疗师人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要治疗师人数(每位治疗师每年应出勤小时数: 每位治疗师每年应出勤总工时)
+            n += each.该组需要治疗师人数(每位治疗师每年应出勤小时数: 每位治疗师每年应出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
@@ -192,7 +193,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需文员人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要文员人数(每位文员每年应出勤小时数: 每位文员每年应出勤总工时)
+            n += each.该组需要文员人数(每位文员每年应出勤小时数: 每位文员每年应出勤总工时).rounded(.awayFromZero)
         }
         return n
     }

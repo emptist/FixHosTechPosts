@@ -12,7 +12,7 @@ import SwiftUI
 struct DetailAddItem: View {
     @EnvironmentObject var userData: UserData
     var elementIndex: Int
-    var 医师组名称: String
+    var 人员组名称: String
     @State var itemName: String = ""
     @State var minutesPerCase: Float = 0
     @State var casesPerYear: Float = 0
@@ -44,7 +44,7 @@ struct DetailAddItem: View {
                 .hLabel(label: "备注")
             
             Button(action: {
-                self.userData.addItem(elementIndex:self.elementIndex,医师组名称: self.医师组名称,项目名称: self.itemName, 每次所需分钟: self.minutesPerCase, 年总次数: self.casesPerYear, 配备技师数: self.techsPerItem, 配备护士数: self.nursesPerItem, 配备医师数: self.doctorsPerItem,配备治疗师数:self.curerPerItem,配备文员数:self.securitryPerItem , 备注: self.comment)
+                self.userData.addItem(elementIndex:self.elementIndex,人员组名称: self.人员组名称,项目名称: self.itemName, 每次所需分钟: self.minutesPerCase, 年总次数: self.casesPerYear, 配备技师数: self.techsPerItem, 配备护士数: self.nursesPerItem, 配备医师数: self.doctorsPerItem,配备治疗师数:self.curerPerItem,配备文员数:self.securitryPerItem , 备注: self.comment)
             }) {
                 Text("新增诊疗项目")
             }

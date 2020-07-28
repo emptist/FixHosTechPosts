@@ -23,10 +23,12 @@ struct Department: View {
             
             DeptBase(elementIndex: self.elementIndex)
             Divider() //Text("定编计算").font(.title)
-            VStack {
+            VStack(alignment: .leading, spacing: 10) {
                 Text("各设备组共需技师人数 \(userData.elements[elementIndex].各设备组共需技师人数)")
                 Text("各设备组共需护士人数 \(userData.elements[elementIndex].各设备组共需护士人数)")
                 Text("各设备组共需医师人数 \(userData.elements[elementIndex].各设备组共需医师人数)")
+                Text("各设备组共需治疗师人数 \(userData.elements[elementIndex].各设备组共需治疗师人数)")
+                Text("各设备组共需文员人数 \(userData.elements[elementIndex].各设备组共需文员人数)")
             }
             .font(.body)
             .foregroundColor(.blue)
@@ -57,26 +59,36 @@ struct DeptBase: View {
                 
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动技师人数,formatter: numberFormatter).hLabel(label: "管理及机动技师人数")
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动医师人数,formatter: numberFormatter).hLabel(label: "管理及机动医师人数")
-                TextField("",value: $userData.elements[self.elementIndex].法定每年工作日,formatter: numberFormatter).hLabel(label: "法定每年工作日")
+                TextField("",value: $userData.elements[self.elementIndex].管理及机动治疗师人数,formatter: numberFormatter).hLabel(label: "管理及机动治疗师人数")
                 
-//                TextField("",value: $userData.elements[self.elementIndex].每年技师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年技师人均其他非工作小时数")
-//                TextField("",value: $userData.elements[self.elementIndex].每年护士人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年护士人均其他非工作小时数")
-//                TextField("",value: $userData.elements[self.elementIndex].每年医师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年医师人均其他非工作小时数")
-//                
-            }
-            HStack {
+                TextField("",value: $userData.elements[self.elementIndex].管理及机动文员人数,formatter: numberFormatter).hLabel(label: "管理及机动文员人数")
                 TextField("",value: $userData.elements[self.elementIndex].每天技师应出勤小时,formatter: numberFormatter).hLabel(label: "每天技师应出勤小时")
                 TextField("",value: $userData.elements[self.elementIndex].每天护士应出勤小时,formatter: numberFormatter).hLabel(label: "每天护士应出勤小时")
                 TextField("",value: $userData.elements[self.elementIndex].每天医师应出勤小时,formatter: numberFormatter).hLabel(label: "每天医师应出勤小时")
+                
+            }
+            HStack {
                 
                 TextField("",value: $userData.elements[self.elementIndex].每年技师人均应休假小时数,formatter: numberFormatter).hLabel(label: "每年技师应休假小时")
                 TextField("",value: $userData.elements[self.elementIndex].每年护士人均应休假小时数,formatter: numberFormatter).hLabel(label: "每年护士应休假小时")
                 TextField("",value: $userData.elements[self.elementIndex].每年医师人均应休假小时数,formatter: numberFormatter).hLabel(label: "每年医师应休假小时")
                 
+                TextField("",value: $userData.elements[self.elementIndex].每年治疗师人均应休假小时数,formatter: numberFormatter).hLabel(label: "每年治疗师人均应休假小时数")
+                TextField("",value: $userData.elements[self.elementIndex].每年文员人均应休假小时数,formatter: numberFormatter).hLabel(label: "每年文员人均应休假小时数")
                 TextField("",value: $userData.elements[self.elementIndex].每年技师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年技师人均其他非工作小时数")
+                
                 TextField("",value: $userData.elements[self.elementIndex].每年护士人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年护士人均其他非工作小时数")
                 TextField("",value: $userData.elements[self.elementIndex].每年医师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年医师人均其他非工作小时数")
-                
+                TextField("",value: $userData.elements[self.elementIndex].每年治疗师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年治疗师人均其他非工作小时数")
+                TextField("",value: $userData.elements[self.elementIndex].每年文员人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年文员人均其他非工作小时数")
+            }
+            HStack {
+                TextField("",value: $userData.elements[self.elementIndex].法定每年工作日,formatter: numberFormatter).hLabel(label: "法定每年工作日")
+                //                TextField("",value: $userData.elements[self.elementIndex].每年技师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年技师人均其他非工作小时数")
+                //                TextField("",value: $userData.elements[self.elementIndex].每年护士人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年护士人均其他非工作小时数")
+                //                TextField("",value: $userData.elements[self.elementIndex].每年医师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年医师人均其他非工作小时数")
+                //
+
             }
         }
     }
