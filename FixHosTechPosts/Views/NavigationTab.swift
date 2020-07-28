@@ -11,9 +11,11 @@ import SwiftUI
 struct NavigationTab: View {
     @EnvironmentObject var userData: UserData
     
-    var element:Element
+    //@Binding
+    var selectedElement: Element
+    
     var elementIndex: Int {
-        userData.elements.firstIndex(where: { $0.id == element.id })!
+        userData.elements.firstIndex(where: { $0.id == selectedElement.id })!
     }
     private var numberFormatter: NumberFormatter {
         let f = NumberFormatter()
@@ -52,6 +54,6 @@ struct NavigationTab: View {
 
 struct NavigationDetail_Preview: PreviewProvider {
     static var previews: some View {
-        NavigationDetail(element: elementData[0]).environmentObject(UserData())
+        NavigationDetail(selectedElement: elementData[0]).environmentObject(UserData())
     }
 }

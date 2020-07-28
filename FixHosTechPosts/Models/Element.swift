@@ -27,8 +27,24 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
         每天开放小时 * 每月开放天数 * 12
     }
     
-    var 每年配备技师总工时: Float {
+    var 配备技师每年总工时: Float {
         每年开放小时数 * 配备技师数
+    }
+    var 配备护士每年总工时: Float {
+        每年开放小时数 * 配备护士数
+    }
+    var 配备医师每年总工时: Float {
+        每年开放小时数 * 配备医师数
+    }
+    
+    func 该组需要技师人数(每位技师每年应出勤小时数: Float) -> Float {
+        配备技师每年总工时 / 每位技师每年应出勤小时数
+    }
+    func 该组需要护士人数(每位护士每年应出勤小时数: Float) -> Float {
+        配备护士每年总工时 / 每位护士每年应出勤小时数
+    }
+    func 该组需要医师人数(每位医师每年应出勤小时数: Float) -> Float {
+        配备医师每年总工时 / 每位医师每年应出勤小时数
     }
 }
 
@@ -70,6 +86,15 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 类别: String = ""
     
     //mno
+    var 每年护士人均应休假小时数: Float = 35
+    var 每年护士人均其他非工作小时数: Float = 15
+    var 每年医师人均应休假小时数: Float = 60
+    var 每年医师人均其他非工作小时数: Float = 20
+    var 每年技师人均应休假小时数: Float = 60
+    var 每年技师人均其他非工作小时数: Float = 20
+    var 每年治疗师人均应休假小时数: Float = 60
+    var 每年治疗师人均其他非工作小时数: Float = 20
+    
     var 每天技师应出勤小时: Float = 8
     var 每天治疗师应出勤小时: Float = 8
     var 每天医师应出勤小时: Float = 8
@@ -101,6 +126,31 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     //def
     
     //ghi
+    var 各设备组共需医师人数: Float {
+        var n:Float = 0
+        for each in deviceUnits {
+            n += each.该组需要医师人数(每位医师每年应出勤小时数: 每位医师每年应出勤总工时)
+        }
+        return n
+    }
+    
+    var 各设备组共需护士人数: Float {
+        var n:Float = 0
+        for each in deviceUnits {
+            n += each.该组需要护士人数(每位护士每年应出勤小时数: 每位护士每年应出勤总工时)
+        }
+        return n
+    }
+    
+    var 各设备组共需技师人数: Float {
+        var n:Float = 0
+        for each in deviceUnits {
+            n += each.该组需要技师人数(每位技师每年应出勤小时数: 每位技师每年应出勤总工时)
+        }
+        return n
+    }
+    
+    
     var id = UUID()
     var isConfirmed: Bool {
         已经确认
@@ -109,6 +159,46 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     //jkl
     
     // mno
+    var 每位护士每年实际出勤总工时: Float {
+        每位护士每年应出勤总工时 - 每年预估护士人均休假小时
+    }
+    var 每位护士每年应出勤总工时: Float {
+        法定每年工作日 * 每天护士应出勤小时
+    }
+    var 每位医师每年实际出勤总工时: Float {
+        每位医师每年应出勤总工时 - 每年预估医师人均休假小时
+    }
+    var 每位医师每年应出勤总工时: Float {
+        法定每年工作日 * 每天医师应出勤小时
+    }
+    var 每位技师每年实际出勤总工时: Float {
+        每位技师每年应出勤总工时 - 每年预估技师人均休假小时
+    }
+    var 每位技师每年应出勤总工时: Float {
+        法定每年工作日 * 每天技师应出勤小时
+    }
+    var 每位治疗师每年应出勤总工时: Float {
+        法定每年工作日 * 每天治疗师应出勤小时
+    }
+    var 每位治疗师每年实际出勤总工时: Float {
+        每位治疗师每年应出勤总工时 - 每年预估治疗师人均休假小时
+    }
+//    var 每位医师每年应出勤总工时: Float {
+//        法定每年工作日 * 每天治疗师应出勤小时
+//    }
+
+    var 每年预估护士人均休假小时: Float {
+        每年护士人均应休假小时数 + 每年护士人均其他非工作小时数
+    }
+    var 每年预估医师人均休假小时: Float {
+        每年医师人均应休假小时数 + 每年医师人均其他非工作小时数
+    }
+    var 每年预估技师人均休假小时: Float {
+        每年技师人均应休假小时数 + 每年技师人均其他非工作小时数
+    }
+    var 每年预估治疗师人均休假小时: Float {
+        每年治疗师人均应休假小时数 + 每年治疗师人均其他非工作小时数
+    }
     var name: String {
         return 科室名称
     }
