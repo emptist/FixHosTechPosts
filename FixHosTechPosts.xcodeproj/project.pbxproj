@@ -18,6 +18,7 @@
 		480A631524CDAD2B00037D9E /* DetailAddDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631424CDAD2B00037D9E /* DetailAddDoctor.swift */; };
 		480A631724CDB73000037D9E /* DetailAddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631624CDB73000037D9E /* DetailAddItem.swift */; };
 		4811B7E724CFB66E00FE1267 /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E624CFB66E00FE1267 /* Devices.swift */; };
+		4811B7E924CFD96100FE1267 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E824CFD96100FE1267 /* Department.swift */; };
 		48AF0D1C24CEC1DA00265A44 /* NavigationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */; };
 		48AF0D1E24CEC26E00265A44 /* DeviceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */; };
 		48AF0D2024CEC2A300265A44 /* DoctorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1F24CEC2A300265A44 /* DoctorGroup.swift */; };
@@ -43,6 +44,7 @@
 		480A631424CDAD2B00037D9E /* DetailAddDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddDoctor.swift; sourceTree = "<group>"; };
 		480A631624CDB73000037D9E /* DetailAddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddItem.swift; sourceTree = "<group>"; };
 		4811B7E624CFB66E00FE1267 /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
+		4811B7E824CFD96100FE1267 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTab.swift; sourceTree = "<group>"; };
 		48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroup.swift; sourceTree = "<group>"; };
 		48AF0D1F24CEC2A300265A44 /* DoctorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorGroup.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				480A630A24CD87B700037D9E /* NavigationPrimary.swift */,
 				480A630C24CD885000037D9E /* NavigationDetail.swift */,
 				48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */,
+				4811B7E824CFD96100FE1267 /* Department.swift */,
 				48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */,
 				48AF0D1F24CEC2A300265A44 /* DoctorGroup.swift */,
 				480A630E24CD88F500037D9E /* MainView.swift */,
@@ -227,6 +230,7 @@
 				480A630B24CD87B700037D9E /* NavigationPrimary.swift in Sources */,
 				48AF0D1E24CEC26E00265A44 /* DeviceGroup.swift in Sources */,
 				48AF0D1C24CEC1DA00265A44 /* NavigationTab.swift in Sources */,
+				4811B7E924CFD96100FE1267 /* Department.swift in Sources */,
 				48FA2DFD24C9C783009EA536 /* Data.swift in Sources */,
 				480A630524CD864F00037D9E /* UserData.swift in Sources */,
 				480A630724CD876000037D9E /* ElementRow.swift in Sources */,
