@@ -41,6 +41,10 @@ struct CheckItemView: View {
                 .hLabel(label: "配备护士数")
             TextField("配备医师数",value: $item.配备医师数,formatter: numberFormatter)
                 .hLabel(label: "配备医师数")
+            TextField("配备治疗师数",value: $item.配备治疗师数,formatter: numberFormatter)
+                .hLabel(label: "配备治疗师数")
+            TextField("配备文员数",value: $item.配备文员数,formatter: numberFormatter)
+                .hLabel(label: "配备文员数")
             TextField("备注",text: $item.备注)
                 .hLabel(label: "备注")
             

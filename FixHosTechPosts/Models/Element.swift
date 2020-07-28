@@ -127,6 +127,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 每天医师应出勤小时: Float = 8
     var 每天护士应出勤小时: Float = 7
     var 每天文员应出勤小时: Float = 7
+    
     var 目前护士人数: Float = 0
     var 目前技师人数: Float?
     var 目前医生人数: Float = 0

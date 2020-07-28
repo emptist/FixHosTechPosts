@@ -22,7 +22,7 @@ struct DoctorGroup: View {
                     Section(header:Text(unit.医师组名称)) {
                         VStack(alignment:.leading) {
                             //Text("\(unit.医师组名称)")
-                            DetailAddItem(elementIndex: self.elementIndex, 医师组名称: unit.医师组名称, techsPerItem: 0, nursesPerItem: 0, doctorsPerItem: 0)
+                            DetailAddItem(elementIndex: self.elementIndex, 医师组名称: unit.医师组名称, techsPerItem: 0, nursesPerItem: 0, doctorsPerItem: 0, curerPerItem: 0, securitryPerItem: 0)
                             Divider()
                             CheckItems(doctorUnit: unit)
 //                            ForEach(unit.checkItems) { checkItem in
