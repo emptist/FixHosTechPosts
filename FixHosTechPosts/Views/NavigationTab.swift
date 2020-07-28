@@ -30,6 +30,10 @@ struct NavigationTab: View {
             DetailHead(elementIndex:elementIndex)
             
             TabView {
+                Department(elementIndex: elementIndex)
+                    .tabItem {Text("概要")}
+                    .padding()
+                
                 DeviceGroup(elementIndex: elementIndex)
                     .tabItem {Text("设备组")}
                     //.position(.zero)
@@ -52,8 +56,8 @@ struct NavigationTab: View {
 
 
 
-struct NavigationDetail_Preview: PreviewProvider {
+struct NavigationTab_Preview: PreviewProvider {
     static var previews: some View {
-        NavigationDetail(selectedElement: elementData[0]).environmentObject(UserData())
+        NavigationTab(selectedElement: elementData[0]).environmentObject(UserData())
     }
 }

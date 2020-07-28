@@ -39,8 +39,9 @@ final class UserData: ObservableObject {
         elements[elementIndex].doctorUnits.append(doctorUnit)
     }
     
-    func addItem(elementIndex: Int, 医师组名称: String, 项目名称: String, 每次所需分钟: Float, 年总次数: Float) -> Void {
-        let item = CheckItem(项目名称: 项目名称, 每次所需分钟: 每次所需分钟, 年总次数: 年总次数)
+    func addItem(elementIndex: Int, 医师组名称: String, 项目名称: String, 每次所需分钟: Float, 年总次数: Float, 配备技师数:Float, 配备护士数: Float, 配备医师数: Float) -> Void {
+        let item = CheckItem(项目名称: 项目名称, 每次所需分钟: 每次所需分钟, 年总次数: 年总次数,配备技师数:配备技师数,配备护士数: 配备护士数, 配备医师数: 配备医师数)
+        print(item)
         guard let doctorUnitIndex = elements[elementIndex].doctorUnits.firstIndex(where: {unit in unit.医师组名称 == 医师组名称}) else {return}
         elements[elementIndex].doctorUnits[doctorUnitIndex].checkItems.append(item)
     }

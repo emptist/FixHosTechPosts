@@ -1,5 +1,5 @@
 //
-//  DetailDoctor.swift
+//  DetailAddDoctor.swift
 //  FixHosTechPosts
 //
 //  Created by jk on 2020/7/26.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DetailDoctor: View {
+struct DetailAddDoctor: View {
     @EnvironmentObject var userData: UserData
     var elementIndex: Int
     @State var groupName: String = ""

@@ -63,6 +63,10 @@ struct CheckItem: Codable, Equatable, Hashable, Identifiable {
     var 项目名称: String
     var 每次所需分钟: Float
     var 年总次数: Float
+    var 配备技师数: Float //= 1
+    var 配备护士数: Float //= 0.2
+    var 配备医师数: Float //= 0
+    
 }
 
 struct Element: Codable, Equatable, Hashable, Identifiable {

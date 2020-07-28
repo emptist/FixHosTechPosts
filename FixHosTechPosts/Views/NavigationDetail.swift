@@ -53,9 +53,6 @@ struct Department: View {
     @EnvironmentObject var userData: UserData
     
     var elementIndex: Int
-//    {
-//        userData.elements.firstIndex(where: { $0.id == selectedElement.id })!
-//    }
     private var numberFormatter: NumberFormatter {
         let f = NumberFormatter()
         f.numberStyle = .decimal
@@ -73,7 +70,7 @@ struct Department: View {
 
 
 
-struct NavigationTab_Preview: PreviewProvider {
+struct NavigationDetail_Preview: PreviewProvider {
     static var previews: some View {
         NavigationDetail(selectedElement: elementData[0]).environmentObject(UserData())
     }

@@ -22,16 +22,12 @@ struct DeviceGroup: View {
         
         VStack(alignment:.leading) {
             Text("设备绑定技师医师和护士,根据所支持的设备分组")
-            DetailDevice(elementIndex: elementIndex)
+            DetailAddDevice(elementIndex: self.elementIndex, deviceName: "", numOfDevs: 0, openDaysPerMonth: 0, openHoursPerDay: 0, techsPerDevice: 0, nursesPerDevice: 0, doctorsPerDevice: 0)
+            
             Divider()
-            ForEach(userData.elements[self.elementIndex].deviceUnits) { unit in
-                //Text(unit.设备名称)
-                HStack {
-                    Text("设备组名称:\(unit.设备组名称) 台数: \(unit.台数) 每天开放小时: \(unit.每天开放小时) 每月开放天数: \(unit.每月开放天数) 绑定技师数: \(unit.配备技师数) 绑定护士数: \(unit.配备护士数) 绑定医师数: \(unit.配备医师数)")
-            
-                }}
-            
+            Devices(elementIndex: self.elementIndex)
         }
+        
     }
 }
 
