@@ -22,15 +22,16 @@ struct Department: View {
         VStack (alignment: .leading, spacing: 10) {
             
             DeptBase(elementIndex: self.elementIndex)
+            Spacer()
             Divider() //Text("定编计算").font(.title)
-            VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .center, spacing: 10) {
                 Text("各设备组共需技师人数 \(userData.elements[elementIndex].各设备组共需技师人数)")
                 Text("各设备组共需护士人数 \(userData.elements[elementIndex].各设备组共需护士人数)")
                 Text("各设备组共需医师人数 \(userData.elements[elementIndex].各设备组共需医师人数)")
                 Text("各设备组共需治疗师人数 \(userData.elements[elementIndex].各设备组共需治疗师人数)")
                 Text("各设备组共需文员人数 \(userData.elements[elementIndex].各设备组共需文员人数)")
             }
-            .font(.body)
+            //.font(.body)
             .foregroundColor(.blue)
             
         }
@@ -90,6 +91,7 @@ struct DeptBase: View {
             }
             HStack {
                 TextField("",value: $userData.elements[self.elementIndex].法定每年工作日,formatter: numberFormatter).hLabel(label: "法定每年工作日")
+                //Spacer()
                 //                TextField("",value: $userData.elements[self.elementIndex].每年技师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年技师人均其他非工作小时数")
                 //                TextField("",value: $userData.elements[self.elementIndex].每年护士人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年护士人均其他非工作小时数")
                 //                TextField("",value: $userData.elements[self.elementIndex].每年医师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年医师人均其他非工作小时数")
