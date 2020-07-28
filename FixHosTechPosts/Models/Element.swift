@@ -46,6 +46,7 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     func 该组需要医师人数(每位医师每年应出勤小时数: Float) -> Float {
         配备医师每年总工时 / 每位医师每年应出勤小时数
     }
+    var 备注: String = "人机绑定"
 }
 
 struct DoctorUnit: Codable, Equatable, Hashable, Identifiable {
@@ -54,9 +55,11 @@ struct DoctorUnit: Codable, Equatable, Hashable, Identifiable {
     }
     var 医师组名称: String
     var checkItems: Array<CheckItem>
+    var 备注: String = ""
 }
 
 struct CheckItem: Codable, Equatable, Hashable, Identifiable {
+    
     var id: String {
         项目名称
     } //= UUID()
@@ -66,6 +69,7 @@ struct CheckItem: Codable, Equatable, Hashable, Identifiable {
     var 配备技师数: Float //= 1
     var 配备护士数: Float //= 0.2
     var 配备医师数: Float //= 0
+    var 备注: String = "人机不绑定"
     
 }
 

@@ -24,6 +24,7 @@ struct DetailAddDevice: View {
     @State var techsPerDevice: Float //= 0
     @State var nursesPerDevice: Float //= 0
     @State var doctorsPerDevice: Float //= 0
+    @State var comment = ""
     
     var body: some View {
         HStack {
@@ -41,8 +42,11 @@ struct DetailAddDevice: View {
                 .hLabel(label: "配备护士数")
             TextField("配备医师数",value: $doctorsPerDevice,formatter: numberFormatter)
                 .hLabel(label: "配备医师数")
+            TextField("备注",text: $comment)
+                .hLabel(label: "备注")
+            
                 Button(action: {
-                    self.userData.addDeviceUnit(elementIndex:self.elementIndex,设备名称: self.deviceName, 台数: self.numOfDevs, 每月开放天数: self.openDaysPerMonth, 每天开放小时: self.openHoursPerDay,配备技师数:self.techsPerDevice,配备护士数:self.nursesPerDevice,配备医师数:self.doctorsPerDevice)
+                    self.userData.addDeviceUnit(elementIndex:self.elementIndex,设备名称: self.deviceName, 台数: self.numOfDevs, 每月开放天数: self.openDaysPerMonth, 每天开放小时: self.openHoursPerDay,配备技师数:self.techsPerDevice,配备护士数:self.nursesPerDevice,配备医师数:self.doctorsPerDevice, 备注: self.comment)
                 }) {
                     Text("新增设备组")
                 }

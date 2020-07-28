@@ -22,9 +22,9 @@ struct DoctorGroup: View {
                     Section(header:Text(unit.医师组名称)) {
                         VStack(alignment:.leading) {
                             //Text("\(unit.医师组名称)")
-                            DetailAddItem(elementIndex: self.elementIndex, 医师组名称: unit.医师组名称)
+                            DetailAddItem(elementIndex: self.elementIndex, 医师组名称: unit.医师组名称, techsPerItem: 0, nursesPerItem: 0, doctorsPerItem: 0)
                             ForEach(unit.checkItems) { item in
-                                Text("项目名称: \(item.项目名称) 所需分钟: \(item.每次所需分钟) 年总次数: \(item.年总次数)")
+                                Text("项目名称: \(item.项目名称) 所需分钟: \(item.每次所需分钟) 年总次数: \(item.年总次数) 配备技师数: \(item.配备技师数) 配备护士数: \(item.配备护士数) 配备医师数: \(item.配备医师数)")
                             }
                         }
                     }

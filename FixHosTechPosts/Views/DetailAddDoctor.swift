@@ -12,14 +12,19 @@ struct DetailAddDoctor: View {
     @EnvironmentObject var userData: UserData
     var elementIndex: Int
     @State var groupName: String = ""
+    @State var comment = ""
     @State var items: [CheckItem] = []
     
     var body: some View {
         VStack {
             HStack {
                 TextField("医师组名称",text: $groupName)
+                    .hLabel(label: "医师组名称")
+                TextField("备注",text: $comment)
+                    .hLabel(label: "备注")
+                
                 Button(action: {
-                    self.userData.addDoctorUnit(elementIndex: self.elementIndex, 医师组名称: self.groupName)//(elementIndex:self.elementIndex,设备名称: self.deviceName, 台数: self.numOfDevs, 每月开放天数: self.openDaysPerMonth, 每天开放小时: self.openHoursPerDay)
+                    self.userData.addDoctorUnit(elementIndex: self.elementIndex, 医师组名称: self.groupName, 备注: self.comment)
                 }) {
                     Text("新增医师组")
                 }
