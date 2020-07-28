@@ -51,7 +51,7 @@ struct DeptBase: View {
     }
     
     var body: some View {
-        VStack{
+        VStack {
             HStack {
                 TextField("",value: $userData.elements[self.elementIndex].开放床位数,formatter: numberFormatter).hLabel(label: "开放床位数")
                 TextField("",value: $userData.elements[self.elementIndex].年出院人次数,formatter: numberFormatter).hLabel(label: "年出院人次数")
@@ -59,6 +59,9 @@ struct DeptBase: View {
                 
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动技师人数,formatter: numberFormatter).hLabel(label: "管理及机动技师人数")
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动医师人数,formatter: numberFormatter).hLabel(label: "管理及机动医师人数")
+            }
+            HStack {
+                
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动治疗师人数,formatter: numberFormatter).hLabel(label: "管理及机动治疗师人数")
                 
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动文员人数,formatter: numberFormatter).hLabel(label: "管理及机动文员人数")
@@ -75,6 +78,9 @@ struct DeptBase: View {
                 
                 TextField("",value: $userData.elements[self.elementIndex].每年治疗师人均应休假小时数,formatter: numberFormatter).hLabel(label: "每年治疗师人均应休假小时数")
                 TextField("",value: $userData.elements[self.elementIndex].每年文员人均应休假小时数,formatter: numberFormatter).hLabel(label: "每年文员人均应休假小时数")
+            }
+            HStack {
+                
                 TextField("",value: $userData.elements[self.elementIndex].每年技师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年技师人均其他非工作小时数")
                 
                 TextField("",value: $userData.elements[self.elementIndex].每年护士人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年护士人均其他非工作小时数")

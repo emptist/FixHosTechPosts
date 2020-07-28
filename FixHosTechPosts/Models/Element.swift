@@ -44,19 +44,19 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     var 配备文员每年总工时: Float {
         每年开放小时数 * 配备文员数
     }
-    func 该组需要技师人数(每位技师每年应出勤小时数: Float) -> Float {
+    func 该组需要技师人数(_ 每位技师每年应出勤小时数: Float) -> Float {
         配备技师每年总工时 / 每位技师每年应出勤小时数
     }
-    func 该组需要护士人数(每位护士每年应出勤小时数: Float) -> Float {
+    func 该组需要护士人数(_ 每位护士每年应出勤小时数: Float) -> Float {
         配备护士每年总工时 / 每位护士每年应出勤小时数
     }
-    func 该组需要医师人数(每位医师每年应出勤小时数: Float) -> Float {
+    func 该组需要医师人数(_ 每位医师每年应出勤小时数: Float) -> Float {
         配备医师每年总工时 / 每位医师每年应出勤小时数
     }
-    func 该组需要治疗师人数(每位治疗师每年应出勤小时数: Float) -> Float {
+    func 该组需要治疗师人数(_ 每位治疗师每年应出勤小时数: Float) -> Float {
         配备治疗师每年总工时 / 每位治疗师每年应出勤小时数
     }
-    func 该组需要文员人数(每位文员每年应出勤小时数: Float) -> Float {
+    func 该组需要文员人数(_ 每位文员每年应出勤小时数: Float) -> Float {
         配备文员每年总工时 / 每位文员每年应出勤小时数
     }
     var 备注: String = "人机绑定"
@@ -161,7 +161,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需医师人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要医师人数(每位医师每年应出勤小时数: 每位医师每年应出勤总工时).rounded(.awayFromZero)
+            n += each.该组需要医师人数(每位医师每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
@@ -169,7 +169,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需护士人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要护士人数(每位护士每年应出勤小时数: 每位护士每年应出勤总工时).rounded(.awayFromZero)
+            n += each.该组需要护士人数(每位护士每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
@@ -177,7 +177,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需技师人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要技师人数(每位技师每年应出勤小时数: 每位技师每年应出勤总工时).rounded(.awayFromZero)
+            n += each.该组需要技师人数(每位技师每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
@@ -185,7 +185,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需治疗师人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要治疗师人数(每位治疗师每年应出勤小时数: 每位治疗师每年应出勤总工时).rounded(.awayFromZero)
+            n += each.该组需要治疗师人数(每位治疗师每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
@@ -193,7 +193,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 各设备组共需文员人数: Float {
         var n:Float = 0
         for each in deviceUnits {
-            n += each.该组需要文员人数(每位文员每年应出勤小时数: 每位文员每年应出勤总工时).rounded(.awayFromZero)
+            n += each.该组需要文员人数(每位文员每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
     }
