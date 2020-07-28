@@ -50,8 +50,3 @@ struct DetailDevice: View {
     }
 }
 
-//struct DetailDevice_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailDevice()
-//    }
-//}

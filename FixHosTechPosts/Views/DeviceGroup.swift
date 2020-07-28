@@ -28,7 +28,7 @@ struct DeviceGroup: View {
                 //Text(unit.设备名称)
                 HStack {
                     Text("设备组名称:\(unit.设备组名称) 台数: \(unit.台数) 每天开放小时: \(unit.每天开放小时) 每月开放天数: \(unit.每月开放天数) 绑定技师数: \(unit.配备技师数) 绑定护士数: \(unit.配备护士数) 绑定医师数: \(unit.配备医师数)")
-                    //TextField("台数",value:$userData.elements[self.elementIndex].deviceUnits.first(where:{}) unit.台数, Formatter: numberFormatter)
+            
                 }}
             
         }
