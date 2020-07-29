@@ -12,7 +12,7 @@ struct CheckItems: View {
     @EnvironmentObject var userData: UserData
     //var elementIndex: Int
     //@Binding
-    var doctorUnit: DoctorUnit
+    var doctorUnit: OperatorUnit
     
     var body: some View {
         VStack {

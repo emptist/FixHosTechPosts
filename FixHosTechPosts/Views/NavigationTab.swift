@@ -41,8 +41,8 @@ struct NavigationTab: View {
                     //.offset(x: 0, y: -200)
 
                 
-                DoctorGroup(elementIndex: elementIndex)
-                    .tabItem {Text("人员组")}
+                OperationGroup(elementIndex: elementIndex)
+                    .tabItem {Text("操作组")}
                     .padding()
                     
                     //.offset(x: 0, y: -200)

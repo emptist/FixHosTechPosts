@@ -25,11 +25,12 @@ struct Department: View {
             Spacer()
             Divider() //Text("定编计算").font(.title)
             HStack(alignment: .center, spacing: 10) {
-                Text("各设备组共需技师人数 \(userData.elements[elementIndex].各设备组共需技师人数)")
-                Text("各设备组共需护士人数 \(userData.elements[elementIndex].各设备组共需护士人数)")
-                Text("各设备组共需医师人数 \(userData.elements[elementIndex].各设备组共需医师人数)")
-                Text("各设备组共需治疗师人数 \(userData.elements[elementIndex].各设备组共需治疗师人数)")
-                Text("各设备组共需文员人数 \(userData.elements[elementIndex].各设备组共需文员人数)")
+                Text("按设备分组各组合计").font(.body).foregroundColor(.purple)
+                Text("技师 \(userData.elements[elementIndex].各设备组共需技师人数)")
+                Text("护士 \(userData.elements[elementIndex].各设备组共需护士人数)")
+                Text("医师 \(userData.elements[elementIndex].各设备组共需医师人数)")
+                Text("治疗师 \(userData.elements[elementIndex].各设备组共需治疗师人数)")
+                Text("文员 \(userData.elements[elementIndex].各设备组共需文员人数)")
             }
             //.font(.body)
             .foregroundColor(.blue)

@@ -62,7 +62,7 @@ struct DetailAddDevice: View {
                 Text("新增设备组")
             }
             
-        }
+        }//.foregroundColor(.blue)
     }
     
 }

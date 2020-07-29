@@ -30,7 +30,7 @@ struct DeviceUnitView: View {
     @Binding var deviceUnit: DeviceUnit
     var body: some View {
         HStack {
-            Text(deviceUnit.设备组名称)
+            Text(deviceUnit.设备组名称).font(.body).foregroundColor(.purple)
             TextField("请输入",value: $deviceUnit.台数,formatter: numberFormatter)
                 .hLabel(label: "台数")
             TextField("每月开放天数",value: $deviceUnit.每月开放天数,formatter: numberFormatter)

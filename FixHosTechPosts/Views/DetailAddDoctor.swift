@@ -18,19 +18,19 @@ struct DetailAddDoctor: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("人员组名称",text: $groupName)
-                    .hLabel(label: "人员组名称")
+                TextField("操作组名称",text: $groupName)
+                    .hLabel(label: "操作组名称")
                 TextField("备注",text: $comment)
                     .hLabel(label: "备注")
                 
                 Button(action: {
-                    self.userData.addDoctorUnit(elementIndex: self.elementIndex, 人员组名称: self.groupName, 备注: self.comment)
+                    self.userData.addDoctorUnit(elementIndex: self.elementIndex, 操作组名称: self.groupName, 备注: self.comment)
                 }) {
-                    Text("新增人员组")
+                    Text("新增操作组")
                 }
             }
             
-        }
+        }//.foregroundColor(.blue)
         
         
     }

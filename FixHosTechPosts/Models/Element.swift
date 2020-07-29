@@ -62,11 +62,11 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     var 备注: String = "人机绑定"
 }
 
-struct DoctorUnit: Codable, Equatable, Hashable, Identifiable {
+struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
     var id: String {
-        人员组名称
+        操作组名称
     }
-    var 人员组名称: String
+    var 操作组名称: String
     var checkItems: Array<CheckItem>
     var 备注: String = ""
 }
@@ -95,7 +95,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
  
     //def
     var deviceUnits: Array<DeviceUnit> = []
-    var doctorUnits: Array<DoctorUnit> = []
+    var doctorUnits: Array<OperatorUnit> = []
     
     var 法定每年工作日: Float = 250
     
