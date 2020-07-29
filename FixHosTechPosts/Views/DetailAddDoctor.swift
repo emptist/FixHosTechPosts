@@ -24,7 +24,7 @@ struct DetailAddDoctor: View {
                     .hLabel(label: "备注")
                 
                 Button(action: {
-                    self.userData.addDoctorUnit(elementIndex: self.elementIndex, 操作组名称: self.groupName, 备注: self.comment)
+                    self.userData.addOperatorUnit(elementIndex: self.elementIndex, 操作组名称: self.groupName, 备注: self.comment)
                 }) {
                     Text("新增操作组")
                 }

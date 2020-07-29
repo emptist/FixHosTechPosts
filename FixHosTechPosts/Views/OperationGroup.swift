@@ -16,11 +16,10 @@ struct OperationGroup: View {
         //Text("操作组")
         VStack(alignment:.leading) {
             VStack {
-                //ForEach(userData.elements[self.elementIndex].doctorUnits) { unit in
                 ForEach(userData.operatorUnitsAt(self.elementIndex)) { unit in
                     VStack(alignment:.leading) {
                         Text("\(unit.操作组名称)").font(.body).foregroundColor(.purple)
-                        CheckItems(doctorUnit: unit)
+                        CheckItems(operatorUnit: unit)
                         Spacer()
                         Divider()
                         DetailAddItem(elementIndex: self.elementIndex, 操作组名称: unit.操作组名称, techsPerItem: 0, nursesPerItem: 0, doctorsPerItem: 0, curerPerItem: 0, securitryPerItem: 0)

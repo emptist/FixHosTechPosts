@@ -12,12 +12,12 @@ struct CheckItems: View {
     @EnvironmentObject var userData: UserData
     //var elementIndex: Int
     //@Binding
-    var doctorUnit: OperatorUnit
+    var operatorUnit: OperatorUnit
     
     var body: some View {
         VStack {
-            //ForEach(userData.elements[elementIndex].doctorUnits) { doctorUnit in
-                ForEach(doctorUnit.checkItems) { checkItem in
+            //ForEach(userData.elements[elementIndex].operatorUnits) { operatorUnit in
+                ForEach(operatorUnit.checkItems) { checkItem in
                     // MARK: Replace this .constant to let checkItem changeable
                     CheckItemView(item: .constant(checkItem))
                 }
