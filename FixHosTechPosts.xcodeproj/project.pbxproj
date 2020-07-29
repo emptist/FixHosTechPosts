@@ -15,7 +15,7 @@
 		480A630F24CD88F500037D9E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A630E24CD88F500037D9E /* MainView.swift */; };
 		480A631124CD98EC00037D9E /* DetailHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631024CD98EC00037D9E /* DetailHead.swift */; };
 		480A631324CDAD1300037D9E /* DetailAddDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631224CDAD1300037D9E /* DetailAddDevice.swift */; };
-		480A631524CDAD2B00037D9E /* DetailAddDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631424CDAD2B00037D9E /* DetailAddDoctor.swift */; };
+		480A631524CDAD2B00037D9E /* DetailAddOperationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631424CDAD2B00037D9E /* DetailAddOperationGroup.swift */; };
 		480A631724CDB73000037D9E /* DetailAddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631624CDB73000037D9E /* DetailAddItem.swift */; };
 		4811B7E724CFB66E00FE1267 /* DeviceUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */; };
 		4811B7E924CFD96100FE1267 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E824CFD96100FE1267 /* Department.swift */; };
@@ -42,7 +42,7 @@
 		480A630E24CD88F500037D9E /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		480A631024CD98EC00037D9E /* DetailHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHead.swift; sourceTree = "<group>"; };
 		480A631224CDAD1300037D9E /* DetailAddDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddDevice.swift; sourceTree = "<group>"; };
-		480A631424CDAD2B00037D9E /* DetailAddDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddDoctor.swift; sourceTree = "<group>"; };
+		480A631424CDAD2B00037D9E /* DetailAddOperationGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddOperationGroup.swift; sourceTree = "<group>"; };
 		480A631624CDB73000037D9E /* DetailAddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddItem.swift; sourceTree = "<group>"; };
 		4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUnits.swift; sourceTree = "<group>"; };
 		4811B7E824CFD96100FE1267 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 				480A631024CD98EC00037D9E /* DetailHead.swift */,
 				480A631224CDAD1300037D9E /* DetailAddDevice.swift */,
 				4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */,
-				480A631424CDAD2B00037D9E /* DetailAddDoctor.swift */,
+				480A631424CDAD2B00037D9E /* DetailAddOperationGroup.swift */,
 				480A631624CDB73000037D9E /* DetailAddItem.swift */,
 				48793FFD24D00852003B317F /* CheckItems.swift */,
 			);
@@ -241,7 +241,7 @@
 				48C4058424CCD1BF00C9B5F0 /* LabeledTextField.swift in Sources */,
 				480A631724CDB73000037D9E /* DetailAddItem.swift in Sources */,
 				480A630D24CD885000037D9E /* NavigationDetail.swift in Sources */,
-				480A631524CDAD2B00037D9E /* DetailAddDoctor.swift in Sources */,
+				480A631524CDAD2B00037D9E /* DetailAddOperationGroup.swift in Sources */,
 				4811B7E724CFB66E00FE1267 /* DeviceUnits.swift in Sources */,
 				48FA2DFC24C9C783009EA536 /* Element.swift in Sources */,
 				480A631124CD98EC00037D9E /* DetailHead.swift in Sources */,

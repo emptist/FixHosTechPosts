@@ -31,7 +31,7 @@ struct OperationGroup: View {
             Spacer()
             Divider()
             Text("服务多台设备,医师和护士,根据所支持的检查项目分组")
-            DetailAddDoctor(elementIndex: elementIndex)
+            DetailAddOperationGroup(elementIndex: elementIndex)
 
         }
     }
