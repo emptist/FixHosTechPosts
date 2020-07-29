@@ -20,8 +20,8 @@ final class UserData: ObservableObject {
         }
     }
     
-    func doctorUnitsAt(_ elementIndex: Int) -> [OperatorUnit] {
-        self.elements[elementIndex].doctorUnits
+    func operatorUnitsAt(_ elementIndex: Int) -> [OperatorUnit] {
+        self.elements[elementIndex].operatorUnits
     }
     
     func addElement(_ newName:String) -> Void {
@@ -42,14 +42,14 @@ final class UserData: ObservableObject {
     func addDoctorUnit(elementIndex: Int, 操作组名称: String, 备注: String) -> Void {
         var doctorUnit = OperatorUnit(操作组名称: 操作组名称, checkItems: [])
         doctorUnit.备注 = 备注
-        elements[elementIndex].doctorUnits.append(doctorUnit)
+        elements[elementIndex].operatorUnits.append(doctorUnit)
     }
     
     func addItem(elementIndex: Int, 操作组名称: String, 项目名称: String, 每次所需分钟: Float, 年总次数: Float, 配备技师数:Float, 配备护士数: Float, 配备医师数: Float,配备治疗师数: Float, 配备文员数: Float, 备注: String) -> Void {
         var item = CheckItem(项目名称: 项目名称, 每次所需分钟: 每次所需分钟, 年总次数: 年总次数,配备技师数:配备技师数,配备护士数: 配备护士数, 配备医师数: 配备医师数, 配备治疗师数: 配备治疗师数, 配备文员数: 配备文员数)
         item.备注 = 备注
         print(item)
-        guard let doctorUnitIndex = elements[elementIndex].doctorUnits.firstIndex(where: {unit in unit.操作组名称 == 操作组名称}) else {return}
-        elements[elementIndex].doctorUnits[doctorUnitIndex].checkItems.append(item)
+        guard let doctorUnitIndex = elements[elementIndex].operatorUnits.firstIndex(where: {unit in unit.操作组名称 == 操作组名称}) else {return}
+        elements[elementIndex].operatorUnits[doctorUnitIndex].checkItems.append(item)
     }
 }

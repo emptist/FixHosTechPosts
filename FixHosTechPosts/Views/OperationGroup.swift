@@ -17,7 +17,7 @@ struct OperationGroup: View {
         VStack(alignment:.leading) {
             VStack {
                 //ForEach(userData.elements[self.elementIndex].doctorUnits) { unit in
-                ForEach(userData.doctorUnitsAt(self.elementIndex)) { unit in
+                ForEach(userData.operatorUnitsAt(self.elementIndex)) { unit in
                     VStack(alignment:.leading) {
                         Text("\(unit.操作组名称)").font(.body).foregroundColor(.purple)
                         CheckItems(doctorUnit: unit)

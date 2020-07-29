@@ -95,7 +95,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
  
     //def
     var deviceUnits: Array<DeviceUnit> = []
-    var doctorUnits: Array<OperatorUnit> = []
+    var operatorUnits: Array<OperatorUnit> = []
     
     var 法定每年工作日: Float = 250
     
