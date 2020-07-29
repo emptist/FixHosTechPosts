@@ -36,8 +36,3 @@ struct DetailAddOperationGroup: View {
     }
 }
 
-//struct DetailDoctor_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailDoctor()
-//    }
-//}

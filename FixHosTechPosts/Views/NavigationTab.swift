@@ -46,7 +46,11 @@ struct NavigationTab: View {
                     .padding()
                     
                     //.offset(x: 0, y: -200)
-
+                
+                ScheduleGroup(elementIndex: elementIndex)
+                    .tabItem {Text("排班组")}
+                    .padding()
+                
             }
         }
         

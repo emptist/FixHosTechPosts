@@ -30,7 +30,7 @@ struct OperationGroup: View {
             }
             Spacer()
             Divider()
-            Text("服务多台设备,医师和护士,根据所支持的检查项目分组")
+            Text("根据诊疗操作类型和项目分组,没有机器,或人手与机器数量无线性关系").font(.body).foregroundColor(.red)
             DetailAddOperationGroup(elementIndex: elementIndex)
 
         }

@@ -24,6 +24,7 @@
 		48AF0D1E24CEC26E00265A44 /* DeviceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */; };
 		48AF0D2024CEC2A300265A44 /* OperationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */; };
 		48C4058424CCD1BF00C9B5F0 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C4058324CCD1BF00C9B5F0 /* LabeledTextField.swift */; };
+		48DEDD1D24D124AD00E9C26A /* ScheduleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DEDD1C24D124AD00E9C26A /* ScheduleGroup.swift */; };
 		48FA2DE124C9C6CA009EA536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA2DE024C9C6CA009EA536 /* AppDelegate.swift */; };
 		48FA2DE324C9C6CA009EA536 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FA2DE224C9C6CA009EA536 /* ContentView.swift */; };
 		48FA2DE524C9C6D3009EA536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48FA2DE424C9C6D3009EA536 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroup.swift; sourceTree = "<group>"; };
 		48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationGroup.swift; sourceTree = "<group>"; };
 		48C4058324CCD1BF00C9B5F0 /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
+		48DEDD1C24D124AD00E9C26A /* ScheduleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleGroup.swift; sourceTree = "<group>"; };
 		48FA2DDD24C9C6CA009EA536 /* FixHosTechPosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixHosTechPosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48FA2DE024C9C6CA009EA536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48FA2DE224C9C6CA009EA536 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				4811B7E824CFD96100FE1267 /* Department.swift */,
 				48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */,
 				48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */,
+				48DEDD1C24D124AD00E9C26A /* ScheduleGroup.swift */,
 				480A630E24CD88F500037D9E /* MainView.swift */,
 				480A630824CD877800037D9E /* ElementList.swift */,
 				480A630624CD876000037D9E /* ElementRow.swift */,
@@ -238,6 +241,7 @@
 				480A630524CD864F00037D9E /* UserData.swift in Sources */,
 				480A630724CD876000037D9E /* ElementRow.swift in Sources */,
 				48793FFE24D00852003B317F /* CheckItems.swift in Sources */,
+				48DEDD1D24D124AD00E9C26A /* ScheduleGroup.swift in Sources */,
 				48C4058424CCD1BF00C9B5F0 /* LabeledTextField.swift in Sources */,
 				480A631724CDB73000037D9E /* DetailAddItem.swift in Sources */,
 				480A630D24CD885000037D9E /* NavigationDetail.swift in Sources */,
