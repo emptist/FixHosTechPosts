@@ -281,19 +281,19 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     
     //def
     var 定编技师人数: Float {
-        各操作组共需技师人数 + 各设备组共需技师人数
+        各操作组共需技师人数 + 各设备组共需技师人数 + 各诊室组共需技师人数
     }
     var 定编护士人数: Float {
-        各操作组共需护士人数 + 各设备组共需护士人数
+        各操作组共需护士人数 + 各设备组共需护士人数 + 各诊室组共需护士人数
     }
     var 定编医师人数: Float {
-        各操作组共需医师人数 + 各设备组共需医师人数
+        各操作组共需医师人数 + 各设备组共需医师人数 + 各诊室组共需医师人数
     }
     var 定编治疗师人数: Float {
-        各操作组共需治疗师人数 + 各设备组共需治疗师人数
+        各操作组共需治疗师人数 + 各设备组共需治疗师人数 + 各诊室组共需治疗师人数
     }
     var 定编文员人数: Float {
-        各操作组共需文员人数 + 各设备组共需文员人数
+        各操作组共需文员人数 + 各设备组共需文员人数 + 各诊室组共需文员人数
     }
     var 定编人数: Float {
         定编技师人数 + 定编护士人数 + 定编医师人数 + 定编治疗师人数 + 定编文员人数
@@ -382,7 +382,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     
     var 各诊室组共需医师人数: Float {
         var n:Float = 0
-        for each in deviceUnits {
+        for each in roomUnits {
             n += each.该组需要医师人数(每位医师每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
@@ -390,7 +390,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     
     var 各诊室组共需护士人数: Float {
         var n:Float = 0
-        for each in deviceUnits {
+        for each in roomUnits {
             n += each.该组需要护士人数(每位护士每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
@@ -398,7 +398,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     
     var 各诊室组共需技师人数: Float {
         var n:Float = 0
-        for each in deviceUnits {
+        for each in roomUnits {
             n += each.该组需要技师人数(每位技师每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
@@ -406,7 +406,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     
     var 各诊室组共需治疗师人数: Float {
         var n:Float = 0
-        for each in deviceUnits {
+        for each in roomUnits {
             n += each.该组需要治疗师人数(每位治疗师每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n
@@ -414,7 +414,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     
     var 各诊室组共需文员人数: Float {
         var n:Float = 0
-        for each in deviceUnits {
+        for each in roomUnits {
             n += each.该组需要文员人数(每位文员每年实际出勤总工时).rounded(.awayFromZero)
         }
         return n

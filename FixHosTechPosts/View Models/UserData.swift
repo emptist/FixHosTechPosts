@@ -14,7 +14,7 @@ final class UserData: ObservableObject {
     @Published var showKeysOnly = false
     @Published var elements = elementData/*.sorted(by: { $0.pinyin < $1.pinyin })*/ {
         didSet {
-            DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.global(qos: .userInitiated).async {
                 save(self.elements)
             }
         }

@@ -34,6 +34,13 @@ struct NavigationTab: View {
                     .tabItem {Text("概要")}
                     .padding()
                 
+                RoomGroup(elementIndex: elementIndex)
+                    .tabItem {Text("诊室组")}
+                    //.position(.zero)
+                    .padding()
+                //.offset(x: 0, y: -200)
+
+                
                 DeviceGroup(elementIndex: elementIndex)
                     .tabItem {Text("设备组")}
                     //.position(.zero)
