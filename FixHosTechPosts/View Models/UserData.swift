@@ -39,6 +39,12 @@ final class UserData: ObservableObject {
         elements[elementIndex].deviceUnits.append(device)
     }
     
+    func addRoomUnit(elementIndex:Int, 诊室名称: String, 房间数: Float, 每月开放天数: Float, 每天开放小时: Float, 配备技师数:Float, 配备护士数: Float, 配备医师数: Float, 配备治疗师数: Float, 配备文员数: Float, 备注: String) -> Void {
+        var room = RoomUnit(诊室组名称: 诊室名称, 房间数: 房间数, 每月开放天数: 每月开放天数, 每天开放小时: 每天开放小时,配备技师数:配备技师数,配备护士数: 配备护士数, 配备医师数: 配备医师数, 配备治疗师数: 配备治疗师数, 配备文员数: 配备文员数)
+        room.备注 = 备注
+        elements[elementIndex].roomUnits.append(room)
+    }
+    
     func addOperatorUnit(elementIndex: Int, 操作组名称: String, 备注: String) -> Void {
         var operatorUnit = OperatorUnit(操作组名称: 操作组名称, checkItems: [])
         operatorUnit.备注 = 备注

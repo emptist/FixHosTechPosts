@@ -20,6 +20,7 @@
 		4811B7E724CFB66E00FE1267 /* DeviceUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */; };
 		4811B7E924CFD96100FE1267 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E824CFD96100FE1267 /* Department.swift */; };
 		48793FFE24D00852003B317F /* CheckItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48793FFD24D00852003B317F /* CheckItems.swift */; };
+		48AE217724D2FF1600FA9B37 /* DetailAddRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE217624D2FF1600FA9B37 /* DetailAddRoom.swift */; };
 		48AF0D1C24CEC1DA00265A44 /* NavigationTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */; };
 		48AF0D1E24CEC26E00265A44 /* DeviceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */; };
 		48AF0D2024CEC2A300265A44 /* OperationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */; };
@@ -48,6 +49,7 @@
 		4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUnits.swift; sourceTree = "<group>"; };
 		4811B7E824CFD96100FE1267 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
 		48793FFD24D00852003B317F /* CheckItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckItems.swift; sourceTree = "<group>"; };
+		48AE217624D2FF1600FA9B37 /* DetailAddRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddRoom.swift; sourceTree = "<group>"; };
 		48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTab.swift; sourceTree = "<group>"; };
 		48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroup.swift; sourceTree = "<group>"; };
 		48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationGroup.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				48FA2DE224C9C6CA009EA536 /* ContentView.swift */,
 				480A631024CD98EC00037D9E /* DetailHead.swift */,
 				480A631224CDAD1300037D9E /* DetailAddDevice.swift */,
+				48AE217624D2FF1600FA9B37 /* DetailAddRoom.swift */,
 				4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */,
 				480A631424CDAD2B00037D9E /* DetailAddOperationGroup.swift */,
 				480A631624CDB73000037D9E /* DetailAddItem.swift */,
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AE217724D2FF1600FA9B37 /* DetailAddRoom.swift in Sources */,
 				480A630924CD877800037D9E /* ElementList.swift in Sources */,
 				480A630F24CD88F500037D9E /* MainView.swift in Sources */,
 				48FA2DE324C9C6CA009EA536 /* ContentView.swift in Sources */,
