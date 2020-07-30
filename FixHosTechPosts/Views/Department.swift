@@ -33,6 +33,16 @@ struct Department: View {
                     Text("治疗师 \(userData.elements[elementIndex].定编治疗师人数)")
                     Text("文员 \(userData.elements[elementIndex].定编文员人数)")
                 }
+                
+                HStack(alignment: .center, spacing: 10) {
+                    Text("按诊室分组各组合计").font(.body).foregroundColor(.purple)
+                    Text("技师 \(userData.elements[elementIndex].各诊室组共需技师人数)")
+                    Text("护士 \(userData.elements[elementIndex].各诊室组共需护士人数)")
+                    Text("医师 \(userData.elements[elementIndex].各诊室组共需医师人数)")
+                    Text("治疗师 \(userData.elements[elementIndex].各诊室组共需治疗师人数)")
+                    Text("文员 \(userData.elements[elementIndex].各诊室组共需文员人数)")
+                }
+                
                 HStack(alignment: .center, spacing: 10) {
                     Text("按设备分组各组合计").font(.body).foregroundColor(.purple)
                     Text("技师 \(userData.elements[elementIndex].各设备组共需技师人数)")
