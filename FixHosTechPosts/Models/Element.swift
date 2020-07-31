@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import CoreLocation
 
 
 struct RoomUnit: Codable, Equatable, Hashable, Identifiable {
