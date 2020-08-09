@@ -19,7 +19,7 @@ struct OperationGroup: View {
                 ForEach(userData.operatorUnitsAt(self.elementIndex)) { unit in
                     VStack(alignment:.leading) {
                         Text("\(unit.操作组名称)").font(.body).foregroundColor(.purple)
-                        OperateUnits(operatorUnit: unit)
+                        OperateUnits(elementIndex:self.elementIndex,operatorUnit: unit)
                         Spacer()
                         Divider()
                         DetailAddItem(elementIndex: self.elementIndex, 操作组名称: unit.操作组名称, techsPerItem: 0, nursesPerItem: 0, doctorsPerItem: 0, curerPerItem: 0, securitryPerItem: 0)
