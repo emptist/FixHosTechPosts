@@ -12,11 +12,14 @@ struct NavigationTab: View {
     @EnvironmentObject var userData: UserData
     
     //@Binding
-    var selectedElement: Element
+//    var selectedElement: Element
+//
+//    var elementIndex: Int {
+//        userData.elements.firstIndex(where: { $0.id == selectedElement.id })!
+//    }
+    //@Binding
+    var selectedIndex: Int
     
-    var elementIndex: Int {
-        userData.elements.firstIndex(where: { $0.id == selectedElement.id })!
-    }
     private var numberFormatter: NumberFormatter {
         let f = NumberFormatter()
         f.numberStyle = .decimal
@@ -26,39 +29,40 @@ struct NavigationTab: View {
     
     var body: some View {
         //VStack(alignment: .leading, spacing: 12) {
+        
         VStack {
-            DetailHead(elementIndex:elementIndex)
+            DetailHead(elementIndex:selectedIndex)
             
             TabView {
-                Department(elementIndex: elementIndex)
+                Department(elementIndex: selectedIndex)
                     .tabItem {Text("概要")}
                     .padding()
                 
-                RoomGroup(elementIndex: elementIndex)
+                RoomGroup(elementIndex: selectedIndex)
                     .tabItem {Text("诊室组")}
                     //.position(.zero)
                     .padding()
                 //.offset(x: 0, y: -200)
 
                 
-                DeviceGroup(elementIndex: elementIndex)
+                DeviceGroup(elementIndex: selectedIndex)
                     .tabItem {Text("设备组")}
                     //.position(.zero)
                     .padding()
                     //.offset(x: 0, y: -200)
 
                 
-                OperationGroup(elementIndex: elementIndex)
+                OperationGroup(elementIndex: selectedIndex)
                     .tabItem {Text("操作组")}
                     .padding()
                     
                     //.offset(x: 0, y: -200)
                 
-                ScheduleGroup(elementIndex: elementIndex)
+                ScheduleGroup(elementIndex: selectedIndex)
                     .tabItem {Text("排班组")}
                     .padding()
                 
-            }
+                }
         }
         
     }
@@ -69,6 +73,6 @@ struct NavigationTab: View {
 
 struct NavigationTab_Preview: PreviewProvider {
     static var previews: some View {
-        NavigationTab(selectedElement: elementData[0]).environmentObject(UserData())
+        NavigationTab(selectedIndex: 0).environmentObject(UserData())
     }
 }

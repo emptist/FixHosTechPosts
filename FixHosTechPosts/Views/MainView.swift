@@ -18,11 +18,14 @@ struct MainView: View {
     @EnvironmentObject var userData: UserData
     @State private var selectedElement: Element?
     
+    var selectedIndex: Int {
+        userData.elements.firstIndex(where: { $0.id == self.selectedElement?.id }) ?? 0
+    }
+    
     var body: some View {
         NavigationView {
             NavigationPrimary(selectedElement: $selectedElement)
-            NavigationTab(selectedElement: selectedElement ??
-                userData.elements.sorted(by: { $0.pinyin < $1.pinyin })[0])
+            NavigationTab(selectedIndex: selectedIndex)
         }
         .frame(minWidth: 700, minHeight: 400)
         

@@ -92,13 +92,22 @@ struct DeptBase: View {
     
     var body: some View {
         VStack {
-            HStack {
+            HStack{
                 TextField("",value: $userData.elements[self.elementIndex].开放床位数,formatter: numberFormatter).hLabel(label: "开放床位数")
                 TextField("",value: $userData.elements[self.elementIndex].年出院人次数,formatter: numberFormatter).hLabel(label: "年出院人次数")
+                TextField("",value: $userData.elements[self.elementIndex].目前医生人数,formatter: numberFormatter).hLabel(label: "目前医生人数")
+                TextField("",value: $userData.elements[self.elementIndex].目前护士人数,formatter: numberFormatter).hLabel(label: "目前护士人数")
+                TextField("",value: $userData.elements[self.elementIndex].目前技师人数,formatter: numberFormatter).hLabel(label: "目前技师人数")
+                
+            }
+            HStack {
+                TextField("",value: $userData.elements[self.elementIndex].目前文员人数,formatter: numberFormatter).hLabel(label: "目前文员人数")
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动护士人数,formatter: numberFormatter).hLabel(label: "管理及机动护士人数")
                 
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动技师人数,formatter: numberFormatter).hLabel(label: "管理及机动技师人数")
                 TextField("",value: $userData.elements[self.elementIndex].管理及机动医师人数,formatter: numberFormatter).hLabel(label: "管理及机动医师人数")
+                TextField("",value: $userData.elements[self.elementIndex].管理及机动文员人数,formatter: numberFormatter).hLabel(label: "管理及机动文员人数")
+            
             }
             HStack {
                 

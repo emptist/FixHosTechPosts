@@ -33,8 +33,8 @@ struct NavigationPrimary: View {
                 Button(action: {
                     //self.addItem()
                     self.userData.addElement(self.newName)
-                    self.selectedElement = self.userData.elements.first(where: { element in
-                        element.name == self.newName
+                    self.selectedElement = self.userData.elements.first(where: {
+                        $0.name == self.newName
                     })
                 }) {
                     Text("添加")

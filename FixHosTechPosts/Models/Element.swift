@@ -193,6 +193,9 @@ struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
     var 备注: String = ""
 }
 
+
+
+
 struct CheckItem: Codable, Equatable, Hashable, Identifiable {
     
     var id: String {
@@ -209,6 +212,9 @@ struct CheckItem: Codable, Equatable, Hashable, Identifiable {
     var 备注: String = "人机不绑定"
     
 }
+
+
+
 
 struct Element: Codable, Equatable, Hashable, Identifiable {
     

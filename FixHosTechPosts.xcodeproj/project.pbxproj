@@ -11,7 +11,6 @@
 		480A630724CD876000037D9E /* ElementRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A630624CD876000037D9E /* ElementRow.swift */; };
 		480A630924CD877800037D9E /* ElementList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A630824CD877800037D9E /* ElementList.swift */; };
 		480A630B24CD87B700037D9E /* NavigationPrimary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A630A24CD87B700037D9E /* NavigationPrimary.swift */; };
-		480A630D24CD885000037D9E /* NavigationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A630C24CD885000037D9E /* NavigationDetail.swift */; };
 		480A630F24CD88F500037D9E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A630E24CD88F500037D9E /* MainView.swift */; };
 		480A631124CD98EC00037D9E /* DetailHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631024CD98EC00037D9E /* DetailHead.swift */; };
 		480A631324CDAD1300037D9E /* DetailAddDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631224CDAD1300037D9E /* DetailAddDevice.swift */; };
@@ -42,7 +41,6 @@
 		480A630624CD876000037D9E /* ElementRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementRow.swift; sourceTree = "<group>"; };
 		480A630824CD877800037D9E /* ElementList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementList.swift; sourceTree = "<group>"; };
 		480A630A24CD87B700037D9E /* NavigationPrimary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPrimary.swift; sourceTree = "<group>"; };
-		480A630C24CD885000037D9E /* NavigationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDetail.swift; sourceTree = "<group>"; };
 		480A630E24CD88F500037D9E /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		480A631024CD98EC00037D9E /* DetailHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHead.swift; sourceTree = "<group>"; };
 		480A631224CDAD1300037D9E /* DetailAddDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddDevice.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			children = (
 				480A630E24CD88F500037D9E /* MainView.swift */,
 				480A630A24CD87B700037D9E /* NavigationPrimary.swift */,
-				480A630C24CD885000037D9E /* NavigationDetail.swift */,
 				48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */,
 				4811B7E824CFD96100FE1267 /* Department.swift */,
 				48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */,
@@ -256,7 +253,6 @@
 				48DEDD1D24D124AD00E9C26A /* ScheduleGroup.swift in Sources */,
 				48C4058424CCD1BF00C9B5F0 /* LabeledTextField.swift in Sources */,
 				480A631724CDB73000037D9E /* DetailAddItem.swift in Sources */,
-				480A630D24CD885000037D9E /* NavigationDetail.swift in Sources */,
 				480A631524CDAD2B00037D9E /* DetailAddOperationGroup.swift in Sources */,
 				4811B7E724CFB66E00FE1267 /* DeviceUnits.swift in Sources */,
 				48FA2DFC24C9C783009EA536 /* Element.swift in Sources */,

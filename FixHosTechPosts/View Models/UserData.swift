@@ -12,7 +12,7 @@ import SwiftUI
 
 final class UserData: ObservableObject {
     @Published var showKeysOnly = false
-    @Published var elements = elementData/*.sorted(by: { $0.pinyin < $1.pinyin })*/ {
+    @Published var elements = elementData {
         didSet {
             DispatchQueue.global(qos: .userInitiated).async {
                 save(self.elements)
