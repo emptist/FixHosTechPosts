@@ -1,5 +1,5 @@
 //
-//  CheckItems.swift
+//  OperateUnits.swift
 //  FixHosTechPosts
 //
 //  Created by jk on 2020/7/28.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CheckItems: View {
+struct OperateUnits: View {
     @EnvironmentObject var userData: UserData
     //var elementIndex: Int
     //@Binding
@@ -19,7 +19,7 @@ struct CheckItems: View {
             //ForEach(userData.elements[elementIndex].operatorUnits) { operatorUnit in
                 ForEach(operatorUnit.checkItems) { checkItem in
                     // MARK: Replace this .constant to let checkItem changeable
-                    CheckItemView(item: .constant(checkItem))
+                    OperateUnitView(item: .constant(checkItem))
                 }
             //}
             
@@ -28,7 +28,8 @@ struct CheckItems: View {
     }
 }
 
-struct CheckItemView: View {
+struct OperateUnitView: View {
+    @EnvironmentObject var userData: UserData
     @Binding var item: CheckItem
     var body: some View {
         HStack{
@@ -54,6 +55,6 @@ struct CheckItemView: View {
 //
 //struct CheckItems_Previews: PreviewProvider {
 //    static var previews: some View {
-//        CheckItems()
+//        OperateUnits()
 //    }
 //}

@@ -30,7 +30,7 @@ struct DeviceUnits: View {
 struct DeviceUnitView: View {
     @EnvironmentObject var userData: UserData
     var elementIndex: Int
-    //@Binding
+    
     var unit: DeviceUnit
     var idx: Int {
         userData.elements[elementIndex].deviceUnits.firstIndex(of: unit) ?? 0
