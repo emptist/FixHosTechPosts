@@ -57,7 +57,7 @@ struct DetailAddDevice: View {
                     .hLabel(label: "备注")
             }
             Button(action: {
-                self.userData.addDeviceUnit(elementIndex:self.elementIndex,设备名称: self.deviceName, 台数: self.numOfDevs, 每月开放天数: self.openDaysPerMonth, 每天开放小时: self.openHoursPerDay,配备技师数:self.techsPerDevice,配备护士数:self.nursesPerDevice,配备医师数:self.doctorsPerDevice, 配备治疗师数: self.curerPerDevice, 配备文员数: self.securitryPerDevice, 备注: self.comment)
+                self.userData.addDeviceUnit(elementIndex:self.elementIndex,设备组名称: self.deviceName, 台数: self.numOfDevs, 每月开放天数: self.openDaysPerMonth, 每天开放小时: self.openHoursPerDay,配备技师数:self.techsPerDevice,配备护士数:self.nursesPerDevice,配备医师数:self.doctorsPerDevice, 配备治疗师数: self.curerPerDevice, 配备文员数: self.securitryPerDevice, 备注: self.comment)
             }) {
                 Text("新增设备组")
             }

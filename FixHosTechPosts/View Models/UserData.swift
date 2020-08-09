@@ -33,9 +33,17 @@ final class UserData: ObservableObject {
         elements.append(Element(科室名称:newName))
     }
     
-    func addDeviceUnit(elementIndex:Int, 设备名称: String, 台数: Float, 每月开放天数: Float, 每天开放小时: Float, 配备技师数:Float, 配备护士数: Float, 配备医师数: Float, 配备治疗师数: Float, 配备文员数: Float, 备注: String) -> Void {
-        var device = DeviceUnit(设备组名称: 设备名称, 台数: 台数, 每月开放天数: 每月开放天数, 每天开放小时: 每天开放小时,配备技师数:配备技师数,配备护士数: 配备护士数, 配备医师数: 配备医师数, 配备治疗师数: 配备治疗师数, 配备文员数: 配备文员数)
+    func removeDeviceUnit(elementIndex:Int,groupIndex:Int) {
+        elements[elementIndex].deviceUnits.remove(at: groupIndex)
+    }
+    func addDeviceUnit(elementIndex:Int, 设备组名称: String, 台数: Float, 每月开放天数: Float, 每天开放小时: Float, 配备技师数:Float, 配备护士数: Float, 配备医师数: Float, 配备治疗师数: Float, 配备文员数: Float, 备注: String) -> Void {
+        var device = DeviceUnit(设备组名称: 设备组名称, 台数: 台数, 每月开放天数: 每月开放天数, 每天开放小时: 每天开放小时,配备技师数:配备技师数,配备护士数: 配备护士数, 配备医师数: 配备医师数, 配备治疗师数: 配备治疗师数, 配备文员数: 配备文员数)
         device.备注 = 备注
+        for each in elements[elementIndex].deviceUnits {
+            if each.设备组名称 == 设备组名称 {
+                return
+            }
+        }
         elements[elementIndex].deviceUnits.append(device)
     }
     
