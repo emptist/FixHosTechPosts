@@ -22,8 +22,6 @@ struct MainView: View {
         NavigationView {
             NavigationPrimary(selectedElement: $selectedElement)
             NavigationTab(selectedElement: selectedElement ??
-            //NavigationDetail(element:selectedElement ??
-            //SingleDetail(element: selectedElement ??
                 userData.elements.sorted(by: { $0.pinyin < $1.pinyin })[0])
         }
         .frame(minWidth: 700, minHeight: 400)

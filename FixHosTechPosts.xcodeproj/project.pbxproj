@@ -134,6 +134,7 @@
 		48FA2DF424C9C6FD009EA536 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				480A630E24CD88F500037D9E /* MainView.swift */,
 				480A630A24CD87B700037D9E /* NavigationPrimary.swift */,
 				480A630C24CD885000037D9E /* NavigationDetail.swift */,
 				48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */,
@@ -142,7 +143,6 @@
 				48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */,
 				48AE217824D3106300FA9B37 /* RoomGroup.swift */,
 				48DEDD1C24D124AD00E9C26A /* ScheduleGroup.swift */,
-				480A630E24CD88F500037D9E /* MainView.swift */,
 				480A630824CD877800037D9E /* ElementList.swift */,
 				480A630624CD876000037D9E /* ElementRow.swift */,
 				48C4058324CCD1BF00C9B5F0 /* LabeledTextField.swift */,
@@ -194,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = ssl;
 				TargetAttributes = {
 					48FA2DDC24C9C6CA009EA536 = {
@@ -398,6 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FixHosTechPosts/FixHosTechPosts.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FixHosTechPosts/Preview Content\"";
@@ -421,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FixHosTechPosts/FixHosTechPosts.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"FixHosTechPosts/Preview Content\"";
