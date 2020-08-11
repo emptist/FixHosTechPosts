@@ -15,19 +15,20 @@ struct RoomGroup: View {
     
     
     var body: some View {
-        
-        VStack(alignment:.leading) {
-            RoomUnits(elementIndex: self.elementIndex)
-            Spacer()
+        ScrollView {
             
-            Divider()
-            
-            Text("设备绑定技师医师和护士,根据所支持的设备分组").font(.body).foregroundColor(.red)
-            DetailAddRoom(elementIndex: self.elementIndex, roomName: "", numOfRooms: 0, openDaysPerMonth: 0, openHoursPerDay: 0, techsPerRoom: 0, nursesPerRoom: 0, doctorsPerRoom: 0, curerPerRoom: 0, securitryPerRoom: 0)
-            
+            VStack(alignment:.leading) {
+                RoomUnits(elementIndex: self.elementIndex)
+                Spacer()
+                
+                Divider()
+                
+                Text("设备绑定技师医师和护士,根据所支持的设备分组").font(.body).foregroundColor(.red)
+                DetailAddRoom(elementIndex: self.elementIndex, roomName: "", numOfRooms: 0, openDaysPerMonth: 0, openHoursPerDay: 0, techsPerRoom: 0, nursesPerRoom: 0, doctorsPerRoom: 0, curerPerRoom: 0, securitryPerRoom: 0)
+                
+                
+            }
             
         }
-        
     }
 }
-

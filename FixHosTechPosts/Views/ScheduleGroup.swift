@@ -13,7 +13,9 @@ struct ScheduleGroup: View {
     var elementIndex: Int
     
     var body: some View {
-        Text("根据工作排班分组的定编计算方法 \(elementIndex)")
+        ScrollView {
+            Text("根据工作排班分组的定编计算方法 \(elementIndex)")
+        }
     }
 }
 
