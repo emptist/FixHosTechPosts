@@ -13,9 +13,9 @@ struct OperationGroup: View {
     var elementIndex: Int
     
     var body: some View {
-        ScrollView {
-            //Text("操作组")
-            VStack(alignment:.leading) {
+        //Text("操作组")
+        VStack(alignment:.leading) {
+            ScrollView {
                 VStack {
                     ForEach(userData.operatorUnitsAt(self.elementIndex)) { unit in
                         VStack(alignment:.leading) {
@@ -29,12 +29,12 @@ struct OperationGroup: View {
                         
                     }
                 }
-                Spacer()
-                Divider()
-                Text("根据诊疗操作类型和项目分组,没有机器,或人手与机器数量无线性关系").font(.body).foregroundColor(.red)
-                DetailAddOperationGroup(elementIndex: elementIndex)
                 
             }
+            Spacer()
+            Divider()
+            Text("根据诊疗操作类型和项目分组,没有机器,或人手与机器数量无线性关系").font(.body).foregroundColor(.red)
+            DetailAddOperationGroup(elementIndex: elementIndex)
         }
     }
 }
