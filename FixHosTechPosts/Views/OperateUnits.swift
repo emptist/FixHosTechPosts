@@ -18,7 +18,6 @@ struct OperateUnits: View {
         VStack {
             //ForEach(userData.elements[elementIndex].operatorUnits) { operatorUnit in
                 ForEach(operatorUnit.checkItems) { checkItem in
-                    // MARK: Replace this .constant to let checkItem changeable
                     OperateUnitView(elementIndex:self.elementIndex,operatorUnit:self.operatorUnit, item: checkItem)
                 }
             //}

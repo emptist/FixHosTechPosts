@@ -18,6 +18,7 @@
 		480A631724CDB73000037D9E /* DetailAddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631624CDB73000037D9E /* DetailAddItem.swift */; };
 		4811B7E724CFB66E00FE1267 /* DeviceUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */; };
 		4811B7E924CFD96100FE1267 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E824CFD96100FE1267 /* Department.swift */; };
+		483CDD9A24E671BB008DC49C /* ScheduleUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483CDD9924E671BB008DC49C /* ScheduleUnits.swift */; };
 		48793FFE24D00852003B317F /* OperateUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48793FFD24D00852003B317F /* OperateUnits.swift */; };
 		48AE217724D2FF1600FA9B37 /* DetailAddRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE217624D2FF1600FA9B37 /* DetailAddRoom.swift */; };
 		48AE217924D3106300FA9B37 /* RoomGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE217824D3106300FA9B37 /* RoomGroup.swift */; };
@@ -48,6 +49,7 @@
 		480A631624CDB73000037D9E /* DetailAddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddItem.swift; sourceTree = "<group>"; };
 		4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUnits.swift; sourceTree = "<group>"; };
 		4811B7E824CFD96100FE1267 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		483CDD9924E671BB008DC49C /* ScheduleUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleUnits.swift; sourceTree = "<group>"; };
 		48793FFD24D00852003B317F /* OperateUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperateUnits.swift; sourceTree = "<group>"; };
 		48AE217624D2FF1600FA9B37 /* DetailAddRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddRoom.swift; sourceTree = "<group>"; };
 		48AE217824D3106300FA9B37 /* RoomGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomGroup.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				48AE217624D2FF1600FA9B37 /* DetailAddRoom.swift */,
 				4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */,
 				48AE217A24D3119E00FA9B37 /* RoomUnits.swift */,
+				483CDD9924E671BB008DC49C /* ScheduleUnits.swift */,
 				480A631424CDAD2B00037D9E /* DetailAddOperationGroup.swift */,
 				480A631624CDB73000037D9E /* DetailAddItem.swift */,
 				48793FFD24D00852003B317F /* OperateUnits.swift */,
@@ -237,6 +240,7 @@
 			files = (
 				48AE217724D2FF1600FA9B37 /* DetailAddRoom.swift in Sources */,
 				480A630924CD877800037D9E /* ElementList.swift in Sources */,
+				483CDD9A24E671BB008DC49C /* ScheduleUnits.swift in Sources */,
 				480A630F24CD88F500037D9E /* MainView.swift in Sources */,
 				48FA2DE324C9C6CA009EA536 /* ContentView.swift in Sources */,
 				48AE217924D3106300FA9B37 /* RoomGroup.swift in Sources */,

@@ -17,7 +17,6 @@ struct RoomUnits: View {
     var body: some View {
         VStack {
             ForEach(userData.elements[elementIndex].roomUnits) { unit in
-                // MARK: Replace this .constant to let unit changeable
                 RoomUnitView(elementIndex: self.elementIndex, roomUnit: unit)
             }
         }
