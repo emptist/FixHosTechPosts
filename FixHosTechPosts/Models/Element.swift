@@ -264,6 +264,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 目前治疗师人数: Float?
     var 目前文员人数: Float?
     
+    
     var 年出院人次数: Float = 0
     //pqr
     
@@ -275,7 +276,15 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     
     //yz
     var 已经确认 = false
-    
+    var 预期护士人数: Float?
+    var 预期技师人数: Float?
+    var 预期医生人数: Float?
+    var 预期治疗师人数: Float?
+    var 预期文员人数: Float?
+    var 主任姓名: String?
+    var 主任手机号: String?
+    var 联络人姓名: String?
+    var 联络人手机号: String?
     
     /// 算法
     //abc
