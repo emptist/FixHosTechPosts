@@ -8,6 +8,41 @@
 
 import SwiftUI
 
+struct DutyGroup: Codable, Equatable, Hashable, Identifiable {
+    
+    let id = UUID()
+    var name: String
+    var 在班小时数: Float = 7
+    var 每周排班天数: Float = 7
+    //var 每班人数: Float?
+    var 配备技师数: Float? //= 1
+    var 配备护士数: Float? //= 0.2
+    var 配备医师数: Float? //= 0
+    var 配备治疗师数: Float?
+    var 配备文员数: Float?
+    var 备注: String = ""
+    
+    var 配备技师每年总工时: Float? {
+        全年总工作小时数(配备技师数)
+    } //= 1
+    var 配备护士每年总工时: Float? {
+        全年总工作小时数(配备护士数)
+    } //= 0.2
+    var 配备医师每年总工时: Float? {
+        全年总工作小时数(配备医师数)
+    }//= 0
+    var 配备治疗师每年总工时: Float? {
+        全年总工作小时数(配备治疗师数)
+    }
+    var 配备文员每年总工时: Float? {
+        全年总工作小时数(配备文员数)
+    }
+    
+    func 全年总工作小时数(_ 每班人数: Float?) -> Float {
+        return 每班人数 ?? 0 * 每周排班天数 * 52.14 * 在班小时数
+    }
+}
+
 
 struct RoomUnit: Codable, Equatable, Hashable, Identifiable {
     var id: String {
@@ -117,7 +152,7 @@ struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
     }
     var 操作组名称: String
     var checkItems: Array<CheckItem>
-   
+    
     var 配备技师数: Float {
         var x: Float = 0
         for item in checkItems {
@@ -169,7 +204,7 @@ struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
     var 配备文员每年总工时: Float {
         每年操作小时数 * 配备文员数
     }
-
+    
     
     func 该组需要技师人数(_ 每位技师每年应出勤小时数: Float) -> Float {
         配备技师每年总工时 / 每位技师每年应出勤小时数
@@ -225,6 +260,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var deviceUnits: Array<DeviceUnit> = []
     var operatorUnits: Array<OperatorUnit> = []
     var roomUnits: Array<RoomUnit> = []
+    var dutyGroups: Array<DutyGroup> = []
     
     var 法定每年工作日: Float = 250
     
@@ -283,6 +319,8 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 预期文员人数: Float?
     var 主任姓名: String?
     var 主任手机号: String?
+    var 护士长姓名: String?
+    var 护士长手机号: String?
     var 联络人姓名: String?
     var 联络人手机号: String?
     

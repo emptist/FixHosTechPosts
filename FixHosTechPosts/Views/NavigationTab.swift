@@ -58,7 +58,7 @@ struct NavigationTab: View {
                     
                     //.offset(x: 0, y: -200)
                 
-                ScheduleGroup(elementIndex: selectedIndex)
+                DutyGroupView(elementIndex: selectedIndex)
                     .tabItem {Text("排班组")}
                     .padding()
                 

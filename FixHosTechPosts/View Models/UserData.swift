@@ -33,6 +33,29 @@ final class UserData: ObservableObject {
         elements.append(Element(科室名称:newName))
     }
     
+    func addDutyGroup(_ name: String, at selectedIdx: Int) {
+        
+        let newName = name.trimmingCharacters(in: .whitespaces)
+        var repeated = false
+        
+        //guard let selectedIdx = elements.firstIndex(of: element) else {
+        guard selectedIdx >= 0 else {
+            return
+        }
+            
+            for each in elements[selectedIdx].dutyGroups {
+                if each.name == newName {
+                    repeated = true
+                    return
+                }
+            }
+        
+        if !repeated {
+            elements[selectedIdx].dutyGroups.append(DutyGroup(name: newName))
+        }
+        
+    }
+    
     func removeDeviceUnit(elementIndex:Int,groupIndex:Int) {
         elements[elementIndex].deviceUnits.remove(at: groupIndex)
     }

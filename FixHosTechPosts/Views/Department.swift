@@ -102,6 +102,8 @@ struct DeptBase: View {
                 HStack{
                     TextField("",text: $userData.elements[self.elementIndex].主任姓名 ?? "").hLabel(label: "主任姓名")
                     TextField("", text: $userData.elements[self.elementIndex].主任手机号 ?? "").hLabel(label: "主任手机号")
+                    TextField("",text: $userData.elements[self.elementIndex].护士长姓名 ?? "").hLabel(label: "护士长姓名")
+                    TextField("", text: $userData.elements[self.elementIndex].护士长手机号 ?? "").hLabel(label: "护士长手机号")
                     TextField("", text: $userData.elements[self.elementIndex].联络人姓名 ?? "").hLabel(label: "联络人姓名")
                     TextField("", text: $userData.elements[self.elementIndex].联络人手机号 ?? "").hLabel(label: "联络人手机号")
                 }
