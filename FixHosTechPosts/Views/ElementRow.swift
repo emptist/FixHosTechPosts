@@ -26,7 +26,15 @@ struct ElementRow: View {
                     .renderingMode(.template)
                     .foregroundColor(.green)
                     .frame(width: 10, height: 10)
-            }            
+            }
+            
+            if element.护理已经确认 {
+                Image("star-filled")
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(.orange)
+                    .frame(width: 10, height: 10)
+            }
         }
         .padding(.vertical,4)
     }

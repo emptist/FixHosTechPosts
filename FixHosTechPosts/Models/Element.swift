@@ -311,6 +311,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     //vwx
     
     //yz
+    var 护理已经确认 = false
     var 已经确认 = false
     var 预期护士人数: Float?
     var 预期技师人数: Float?

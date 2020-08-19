@@ -41,6 +41,26 @@ struct DetailHead: View {
             .frame(width: 20, height: 20)
             .buttonStyle(PlainButtonStyle())
             
+            Button(action: {
+                self.userData.elements[self.elementIndex]
+                    .护理已经确认.toggle()
+            }) {
+                if userData.elements[self.elementIndex].护理已经确认 {
+                    Image("star-filled")
+                        .resizable()
+                        .renderingMode(.template)
+                        .foregroundColor(.orange)
+                        .accessibility(label: Text("Remove from favorites"))
+                } else {
+                    Image("star-empty")
+                        .resizable()
+                        .renderingMode(.template)
+                        .foregroundColor(.gray)
+                        .accessibility(label: Text("Add to favorites"))
+                }
+            }
+            .frame(width: 20, height: 20)
+            .buttonStyle(PlainButtonStyle())
         }
     }
 }
