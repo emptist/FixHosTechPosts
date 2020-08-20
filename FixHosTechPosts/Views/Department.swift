@@ -158,9 +158,11 @@ struct DeptBase: View {
                     TextField("",value: $userData.elements[self.elementIndex].每年文员人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年文员人均其他非工作小时数")
                  
                 }
-                HStack {
-                    //TextField("",value: $userData.elements[self.elementIndex].法定每年工作日,formatter: numberFormatter).hLabel(label: "法定每年工作日")
+                VStack {
+                    TextField("人机比/医护比等有关规定",text: $userData.elements[self.elementIndex].政策法规 ?? "").hLabel(label: "政策法规")
                     TextField("",text: $userData.elements[self.elementIndex].备注).hLabel(label: "备注")
+                    
+                    //TextField("",value: $userData.elements[self.elementIndex].法定每年工作日,formatter: numberFormatter).hLabel(label: "法定每年工作日")
                     //Spacer()
                     //                TextField("",value: $userData.elements[self.elementIndex].每年技师人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年技师人均其他非工作小时数")
                     //                TextField("",value: $userData.elements[self.elementIndex].每年护士人均其他非工作小时数,formatter: numberFormatter).hLabel(label: "每年护士人均其他非工作小时数")

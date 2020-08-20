@@ -318,6 +318,7 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     var 预期医生人数: Float?
     var 预期治疗师人数: Float?
     var 预期文员人数: Float?
+    var 政策法规: String?
     var 主任姓名: String?
     var 主任手机号: String?
     var 护士长姓名: String?

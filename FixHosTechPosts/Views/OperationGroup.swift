@@ -19,7 +19,12 @@ struct OperationGroup: View {
                 VStack {
                     ForEach(userData.operatorUnitsAt(self.elementIndex)) { unit in
                         VStack(alignment:.leading) {
-                            Text("\(unit.操作组名称)").font(.body).foregroundColor(.purple)
+                            HStack {
+                                Text("\(unit.操作组名称)").font(.body).foregroundColor(.purple)
+                                //TextField("备注",text: $unit.备注)
+                            }
+                            
+                            
                             OperateUnits(elementIndex:self.elementIndex,operatorUnit: unit)
                             Spacer()
                             Divider()
