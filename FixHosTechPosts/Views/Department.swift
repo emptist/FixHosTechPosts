@@ -26,54 +26,7 @@ struct Department: View {
             Spacer()
             
             Divider() //Text("定编计算").font(.title)
-            VStack (alignment: .leading, spacing: 10) {
-                HStack(alignment: .center, spacing: 10) {
-                    Text("本科室定编人数合计").font(.body).foregroundColor(.purple)
-                    Text("技师 \(userData.elements[elementIndex].定编技师人数)")
-                    Text("护士 \(userData.elements[elementIndex].定编护士人数)")
-                    Text("医师 \(userData.elements[elementIndex].定编医师人数)")
-                    Text("治疗师 \(userData.elements[elementIndex].定编治疗师人数)")
-                    Text("文员 \(userData.elements[elementIndex].定编文员人数)")
-                }
-                
-                HStack(alignment: .center, spacing: 10) {
-                    Text("按诊室分组各组合计").font(.body).foregroundColor(.purple)
-                    Text("技师 \(userData.elements[elementIndex].各诊室组共需技师人数)")
-                    Text("护士 \(userData.elements[elementIndex].各诊室组共需护士人数)")
-                    Text("医师 \(userData.elements[elementIndex].各诊室组共需医师人数)")
-                    Text("治疗师 \(userData.elements[elementIndex].各诊室组共需治疗师人数)")
-                    Text("文员 \(userData.elements[elementIndex].各诊室组共需文员人数)")
-                }
-                
-                HStack(alignment: .center, spacing: 10) {
-                    Text("按设备分组各组合计").font(.body).foregroundColor(.purple)
-                    Text("技师 \(userData.elements[elementIndex].各设备组共需技师人数)")
-                    Text("护士 \(userData.elements[elementIndex].各设备组共需护士人数)")
-                    Text("医师 \(userData.elements[elementIndex].各设备组共需医师人数)")
-                    Text("治疗师 \(userData.elements[elementIndex].各设备组共需治疗师人数)")
-                    Text("文员 \(userData.elements[elementIndex].各设备组共需文员人数)")
-                }
-                
-                HStack(alignment: .center, spacing: 10) {
-                    Text("按类型分组各组合计").font(.body).foregroundColor(.purple)
-                    Text("技师 \(userData.elements[elementIndex].各操作组共需技师人数)")
-                    Text("护士 \(userData.elements[elementIndex].各操作组共需护士人数)")
-                    Text("医师 \(userData.elements[elementIndex].各操作组共需医师人数)")
-                    Text("治疗师 \(userData.elements[elementIndex].各操作组共需治疗师人数)")
-                    Text("文员 \(userData.elements[elementIndex].各操作组共需文员人数)")
-                }
-                
-                //                HStack(alignment: .center, spacing: 10) {
-                //                    Text("按排班分组各组合计").font(.body).foregroundColor(.purple)
-                //                    Text("技师 \(userData.elements[elementIndex].各排班组共需技师人数)")
-                //                    Text("护士 \(userData.elements[elementIndex].各排班组共需护士人数)")
-                //                    Text("医师 \(userData.elements[elementIndex].各排班组共需医师人数)")
-                //                    Text("治疗师 \(userData.elements[elementIndex].各排班组共需治疗师人数)")
-                //                    Text("文员 \(userData.elements[elementIndex].各排班组共需文员人数)")
-                //                }
-            }
-                //.font(.body)
-                .foregroundColor(.blue)
+            ResultsView(elementIndex: self.elementIndex)
             
         }
         
@@ -180,3 +133,65 @@ struct DeptBase: View {
 //        Department()
 //    }
 //}
+
+struct ResultsView: View {
+    @EnvironmentObject var userData: UserData
+    var elementIndex: Int
+    
+    private var numberFormatter: NumberFormatter {
+        let f = NumberFormatter()
+        f.numberStyle = .decimal
+        return f
+    }
+    
+    var body: some View {
+        VStack (alignment: .leading, spacing: 10) {
+            HStack(alignment: .center, spacing: 10) {
+                Text("本科室定编人数合计").font(.body).foregroundColor(.purple)
+                Text("技师 \(userData.elements[elementIndex].定编技师人数)")
+                Text("护士 \(userData.elements[elementIndex].定编护士人数)")
+                Text("医师 \(userData.elements[elementIndex].定编医师人数)")
+                Text("治疗师 \(userData.elements[elementIndex].定编治疗师人数)")
+                Text("文员 \(userData.elements[elementIndex].定编文员人数)")
+            }
+            
+            HStack(alignment: .center, spacing: 10) {
+                Text("按诊室分组各组合计").font(.body).foregroundColor(.purple)
+                Text("技师 \(userData.elements[elementIndex].各诊室组共需技师人数)")
+                Text("护士 \(userData.elements[elementIndex].各诊室组共需护士人数)")
+                Text("医师 \(userData.elements[elementIndex].各诊室组共需医师人数)")
+                Text("治疗师 \(userData.elements[elementIndex].各诊室组共需治疗师人数)")
+                Text("文员 \(userData.elements[elementIndex].各诊室组共需文员人数)")
+            }
+            
+            HStack(alignment: .center, spacing: 10) {
+                Text("按设备分组各组合计").font(.body).foregroundColor(.purple)
+                Text("技师 \(userData.elements[elementIndex].各设备组共需技师人数)")
+                Text("护士 \(userData.elements[elementIndex].各设备组共需护士人数)")
+                Text("医师 \(userData.elements[elementIndex].各设备组共需医师人数)")
+                Text("治疗师 \(userData.elements[elementIndex].各设备组共需治疗师人数)")
+                Text("文员 \(userData.elements[elementIndex].各设备组共需文员人数)")
+            }
+            
+            HStack(alignment: .center, spacing: 10) {
+                Text("按类型分组各组合计").font(.body).foregroundColor(.purple)
+                Text("技师 \(userData.elements[elementIndex].各操作组共需技师人数)")
+                Text("护士 \(userData.elements[elementIndex].各操作组共需护士人数)")
+                Text("医师 \(userData.elements[elementIndex].各操作组共需医师人数)")
+                Text("治疗师 \(userData.elements[elementIndex].各操作组共需治疗师人数)")
+                Text("文员 \(userData.elements[elementIndex].各操作组共需文员人数)")
+            }
+            
+            //                HStack(alignment: .center, spacing: 10) {
+            //                    Text("按排班分组各组合计").font(.body).foregroundColor(.purple)
+            //                    Text("技师 \(userData.elements[elementIndex].各排班组共需技师人数)")
+            //                    Text("护士 \(userData.elements[elementIndex].各排班组共需护士人数)")
+            //                    Text("医师 \(userData.elements[elementIndex].各排班组共需医师人数)")
+            //                    Text("治疗师 \(userData.elements[elementIndex].各排班组共需治疗师人数)")
+            //                    Text("文员 \(userData.elements[elementIndex].各排班组共需文员人数)")
+            //                }
+        }
+            //.font(.body)
+            .foregroundColor(.blue)
+    }
+}
