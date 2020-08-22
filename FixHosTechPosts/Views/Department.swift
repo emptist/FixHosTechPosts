@@ -174,14 +174,21 @@ struct ResultsView: View {
             }
             
             HStack(alignment: .center, spacing: 10) {
-                Text("按类型分组各组合计").font(.body).foregroundColor(.purple)
+                Text("按业务分组各组合计").font(.body).foregroundColor(.purple)
                 Text("技师 \(userData.elements[elementIndex].各操作组共需技师人数)")
                 Text("护士 \(userData.elements[elementIndex].各操作组共需护士人数)")
                 Text("医师 \(userData.elements[elementIndex].各操作组共需医师人数)")
                 Text("治疗师 \(userData.elements[elementIndex].各操作组共需治疗师人数)")
                 Text("文员 \(userData.elements[elementIndex].各操作组共需文员人数)")
             }
-            
+            HStack(alignment: .center, spacing: 10) {
+                Text("按排班分组各组合计").font(.body).foregroundColor(.purple)
+                Text("技师 \(userData.elements[elementIndex].各排班组共需技师人数)")
+                Text("护士 \(userData.elements[elementIndex].各排班组共需护士人数)")
+                Text("医师 \(userData.elements[elementIndex].各排班组共需医师人数)")
+                Text("治疗师 \(userData.elements[elementIndex].各排班组共需治疗师人数)")
+                Text("文员 \(userData.elements[elementIndex].各排班组共需文员人数)")
+            }
             //                HStack(alignment: .center, spacing: 10) {
             //                    Text("按排班分组各组合计").font(.body).foregroundColor(.purple)
             //                    Text("技师 \(userData.elements[elementIndex].各排班组共需技师人数)")
