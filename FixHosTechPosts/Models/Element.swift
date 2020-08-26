@@ -56,7 +56,7 @@ struct DutyGroup: Codable, Equatable, Hashable, Identifiable {
     }
     
     func 全年总工作小时数(_ 每班人数: Float?) -> Float {
-        return 每班人数 ?? 0 * 每周排班天数 * 52.14 * 在班小时数
+        return (每班人数 ?? 0) * 每周排班天数 * 52.14 * 在班小时数
     }
     
 }
