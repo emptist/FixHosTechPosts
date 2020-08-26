@@ -243,7 +243,11 @@ struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
     }
     
     var 每年操作小时数: Float {
-        10
+        var x: Float = 0
+        for item in checkItems {
+            x += item.每年总小时数
+        }
+        return x
     }
     var 备注: String = ""
 }
@@ -265,6 +269,13 @@ struct CheckItem: Codable, Equatable, Hashable, Identifiable {
     var 配备治疗师数: Float
     var 配备文员数: Float
     var 备注: String = "人机不绑定"
+    
+    var 每年总分钟数: Float {
+        每次所需分钟 * 年总次数
+    }
+    var 每年总小时数: Float {
+        每年总分钟数 / 60
+    }
     
 }
 
