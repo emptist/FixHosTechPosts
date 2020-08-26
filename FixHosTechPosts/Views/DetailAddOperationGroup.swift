@@ -18,15 +18,15 @@ struct DetailAddOperationGroup: View {
     var body: some View {
         VStack {
             HStack {
-                TextField("操作组名称",text: $groupName)
-                    .hLabel(label: "操作组名称")
+                TextField("业务组名称",text: $groupName)
+                    .hLabel(label: "业务组名称")
                 TextField("备注",text: $comment)
                     .hLabel(label: "备注")
                 
                 Button(action: {
                     self.userData.addOperatorUnit(elementIndex: self.elementIndex, 操作组名称: self.groupName, 备注: self.comment)
                 }) {
-                    Text("新增操作组")
+                    Text("新增业务组")
                 }
             }
             
