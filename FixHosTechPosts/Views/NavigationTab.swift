@@ -62,7 +62,11 @@ struct NavigationTab: View {
                     .tabItem {Text("排班组")}
                     .padding()
                 
-                }
+                ReportOnNurse(elementIndex: selectedIndex)
+                    .tabItem { Text("护理定编报告") }
+                
+            }
+                
         }
         
     }

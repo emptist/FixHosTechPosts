@@ -28,7 +28,13 @@ struct NavigationPrimary: View {
             ElementList(selectedElement: $selectedElement)
                 .listStyle(SidebarListStyle())
             
+            
             HStack {
+                Button(action: {
+                    self.userData.saveReport()
+                }) {
+                    Text("S")
+                }
                 TextField("新增科室名", text: $newName)
                 Button(action: {
                     //self.addItem()

@@ -19,7 +19,13 @@ final class UserData: ObservableObject {
             }
         }
     }
-    
+
+    func saveReport() -> Void {
+        for each in elements { //where each.目前护士人数 > 0 && each.临床护士定编人数 > 0 {
+            each.saveReportOnNurse()
+        }
+    }
+
     func operatorUnitsAt(_ elementIndex: Int) -> [OperatorUnit] {
         self.elements[elementIndex].operatorUnits
     }
@@ -51,7 +57,7 @@ final class UserData: ObservableObject {
             }
         
         if !repeated {
-            elements[selectedIdx].dutyGroups.append(DutyGroup(name: newName))
+            elements[selectedIdx].dutyGroups.append(ComplexDutyGroup(name: newName))
         }
         
     }
@@ -88,5 +94,27 @@ final class UserData: ObservableObject {
         //print(item)
         guard let operatorUnitIndex = elements[elementIndex].operatorUnits.firstIndex(where: {unit in unit.操作组名称 == 操作组名称}) else {return}
         elements[elementIndex].operatorUnits[operatorUnitIndex].checkItems.append(item)
+    }
+}
+
+
+extension Element {
+    func saveReportOnNurse() -> Void {
+        if !name.contains("之") && !["中医科","急诊科"].contains(name) {
+            let filename = "\(name).nurse.txt"
+            
+            saveReport(reportOnNurse, to: filename)
+        }
+        
+    }
+    
+    func saveReport(_ report: String, to filename: String) -> Void {
+        do {
+            try report.write(to: URL(fileURLWithPath: filename), atomically: true, encoding: .utf8)
+        }
+        catch {
+            fatalError("Couldn't save to \(filename) in main bundle")
+        }
+        
     }
 }

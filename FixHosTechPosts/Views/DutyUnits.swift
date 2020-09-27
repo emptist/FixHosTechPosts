@@ -25,7 +25,7 @@ struct DutyUnitView: View {
     @EnvironmentObject var userData: UserData
     var elementIndex: Int
     //@Binding
-    var dutyGroup: DutyGroup
+    var dutyGroup: ComplexDutyGroup
     var idx: Int {
         userData.elements[self.elementIndex].dutyGroups.firstIndex(of: dutyGroup) ?? 0
     }

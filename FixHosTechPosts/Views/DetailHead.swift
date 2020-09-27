@@ -20,6 +20,7 @@ struct DetailHead: View {
                 Text(userData.elements[self.elementIndex].科室名称)
                     .font(.title)
             }
+            
             Button(action: {
                 self.userData.elements[self.elementIndex]
                     .已经确认.toggle()
@@ -61,6 +62,17 @@ struct DetailHead: View {
             }
             .frame(width: 20, height: 20)
             .buttonStyle(PlainButtonStyle())
+            
+            HStack{
+                VStack(alignment:.leading) {
+                    Text("医生: 目前人数 \(self.userData.elements[self.elementIndex].目前医生人数) 拟定编 \(self.userData.elements[self.elementIndex].定编医师人数)")
+                    
+                    Text("技师: 目前人数 \(self.userData.elements[self.elementIndex].目前技师人数 ?? 0) 拟定编 \(self.userData.elements[self.elementIndex].定编技师人数)")
+                    
+                    Text("护士: 目前人数 \(self.userData.elements[self.elementIndex].目前护士人数) 拟定编 \(self.userData.elements[self.elementIndex].定编护士人数)")
+                }
+            }.foregroundColor(.blue)
+            
         }
     }
 }

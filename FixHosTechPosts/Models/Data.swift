@@ -62,6 +62,8 @@ func save<T: Encodable>(_ data: T) {
     }
     
     do {
+        //try FileManager().copyItem(atPath: filename, toPath: filename + ".backup.md")
+        
         try json.write(to: file)
     }
     catch {
