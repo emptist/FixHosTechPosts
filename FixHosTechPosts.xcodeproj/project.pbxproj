@@ -154,7 +154,6 @@
 				48AF0D1B24CEC1DA00265A44 /* NavigationTab.swift */,
 				4811B7E824CFD96100FE1267 /* Department.swift */,
 				48AF0D1D24CEC26E00265A44 /* DeviceGroup.swift */,
-				48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */,
 				48AE217824D3106300FA9B37 /* RoomGroup.swift */,
 				48DEDD1C24D124AD00E9C26A /* DutyGroupView.swift */,
 				480A630824CD877800037D9E /* ElementList.swift */,
@@ -170,6 +169,7 @@
 				483CDD9924E671BB008DC49C /* DutyUnits.swift */,
 				480A631424CDAD2B00037D9E /* DetailAddOperationGroup.swift */,
 				480A631624CDB73000037D9E /* DetailAddItem.swift */,
+				48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */,
 				48793FFD24D00852003B317F /* OperateUnits.swift */,
 				482599B4251F308E00238927 /* ReportOnNurse.swift */,
 			);

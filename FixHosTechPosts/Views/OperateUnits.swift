@@ -32,7 +32,7 @@ struct OperateUnitView: View {
     var elementIndex: Int
     var operatorUnit: OperatorUnit
     //@Binding
-    var item: CheckItem
+    var item: TaskItem
     var operateIdx: Int {
         userData.elements[elementIndex].operatorUnits.firstIndex(of: operatorUnit) ?? 0
     }

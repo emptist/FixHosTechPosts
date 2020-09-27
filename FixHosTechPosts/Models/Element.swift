@@ -174,7 +174,7 @@ struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
         操作组名称
     }
     var 操作组名称: String
-    var checkItems: Array<CheckItem>
+    var checkItems: Array<TaskItem>
     
     var 配备技师数: Float {
         var x: Float = 0
@@ -249,7 +249,7 @@ struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
     var 每年操作小时数: Float {
         var x: Float = 0
         for item in checkItems {
-            x += item.每年总小时数
+            x += item.每年操作小时数
         }
         return x
     }
@@ -259,7 +259,7 @@ struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
 
 
 
-struct CheckItem: Codable, Equatable, Hashable, Identifiable {
+struct TaskItem: Codable, Equatable, Hashable, Identifiable {
     
     var id: String {
         项目名称
@@ -277,10 +277,25 @@ struct CheckItem: Codable, Equatable, Hashable, Identifiable {
     var 每年总分钟数: Float {
         每次所需分钟 * 年总次数
     }
-    var 每年总小时数: Float {
+    var 每年操作小时数: Float {
         每年总分钟数 / 60
     }
-    
+    var 配备技师每年总工时: Float {
+        每年操作小时数 * 配备技师数
+    }
+    var 配备护士每年总工时: Float {
+        每年操作小时数 * 配备护士数
+    }
+    var 配备医师每年总工时: Float {
+        每年操作小时数 * 配备医师数
+    }
+    var 配备治疗师每年总工时: Float {
+        每年操作小时数 * 配备治疗师数
+    }
+    var 配备文员每年总工时: Float {
+        每年操作小时数 * 配备文员数
+    }
+
 }
 
 

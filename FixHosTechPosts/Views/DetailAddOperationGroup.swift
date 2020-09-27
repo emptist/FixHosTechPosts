@@ -13,7 +13,7 @@ struct DetailAddOperationGroup: View {
     var elementIndex: Int
     @State var groupName: String = ""
     @State var comment = ""
-    @State var items: [CheckItem] = []
+    @State var items: [TaskItem] = []
     
     var body: some View {
         VStack {

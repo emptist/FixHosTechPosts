@@ -119,11 +119,11 @@ extension ComplexDutyGroup {
     
 }
 
-extension CheckItem {
+extension TaskItem {
     var infoLine: String {
         guard 配备护士数 > 0 else { return "" }
         return """
-        \(项目名称)\t\(配备护士数)\t\(每次所需分钟)\t\(年总次数)\t\(每年总小时数)\t\(备注)\n
+        \(项目名称)\t\(配备护士数)\t\(每次所需分钟)\t\(年总次数)\t\(每年操作小时数)\t\(备注)\n
         """
     }
     
