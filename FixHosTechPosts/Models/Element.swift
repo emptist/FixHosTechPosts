@@ -121,6 +121,9 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
         设备组名称
     }
     var 设备组名称: String
+    var 设施数量: Float {
+        台数
+    }
     var 台数: Float
     var 每月开放天数: Float
     var 每天开放小时: Float
@@ -130,8 +133,9 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     var 配备治疗师数: Float
     var 配备文员数: Float
     
+    // 包含设施(设备/房间等)数量
     var 每年开放小时数: Float {
-        每天开放小时 * 每月开放天数 * 12
+        设施数量 * 每天开放小时 * 每月开放天数 * 12
     }
     
     var 配备技师每年总工时: Float {
@@ -164,7 +168,7 @@ struct DeviceUnit: Codable, Equatable, Hashable, Identifiable {
     func 该组需要文员人数(_ 每位文员每年应出勤小时数: Float) -> Float {
         配备文员每年总工时 / 每位文员每年应出勤小时数
     }
-    var 备注: String = "人机绑定"
+    var 备注: String = "人机/人室绑定"
 }
 
 
@@ -175,84 +179,6 @@ struct OperatorUnit: Codable, Equatable, Hashable, Identifiable {
     }
     var 操作组名称: String
     var checkItems: Array<TaskItem>
-    
-    var 配备技师数: Float {
-        var x: Float = 0
-        for item in checkItems {
-            x += item.配备技师数
-        }
-        return x
-    }
-    var 配备护士数: Float {
-        var x: Float = 0
-        for item in checkItems {
-            x += item.配备护士数
-        }
-        return x
-    }
-    var 配备医师数: Float {
-        var x: Float = 0
-        for item in checkItems {
-            x += item.配备医师数
-        }
-        return x
-    }
-    var 配备治疗师数: Float {
-        var x: Float = 0
-        for item in checkItems {
-            x += item.配备治疗师数
-        }
-        return x
-    }
-    var 配备文员数: Float {
-        var x: Float = 0
-        for item in checkItems {
-            x += item.配备文员数
-        }
-        return x
-    }
-    
-    var 配备技师每年总工时: Float {
-        每年操作小时数 * 配备技师数
-    }
-    var 配备护士每年总工时: Float {
-        每年操作小时数 * 配备护士数
-    }
-    var 配备医师每年总工时: Float {
-        每年操作小时数 * 配备医师数
-    }
-    var 配备治疗师每年总工时: Float {
-        每年操作小时数 * 配备治疗师数
-    }
-    var 配备文员每年总工时: Float {
-        每年操作小时数 * 配备文员数
-    }
-    
-    
-    func 该组需要技师人数(_ 每位技师每年应出勤小时数: Float) -> Float {
-        配备技师每年总工时 / 每位技师每年应出勤小时数
-    }
-    func 该组需要护士人数(_ 每位护士每年应出勤小时数: Float) -> Float {
-        配备护士每年总工时 / 每位护士每年应出勤小时数
-    }
-    func 该组需要医师人数(_ 每位医师每年应出勤小时数: Float) -> Float {
-        //print("\(操作组名称) 配备医师每年总工时 \(配备医师每年总工时)")
-        return 配备医师每年总工时 / 每位医师每年应出勤小时数
-    }
-    func 该组需要治疗师人数(_ 每位治疗师每年应出勤小时数: Float) -> Float {
-        配备治疗师每年总工时 / 每位治疗师每年应出勤小时数
-    }
-    func 该组需要文员人数(_ 每位文员每年应出勤小时数: Float) -> Float {
-        配备文员每年总工时 / 每位文员每年应出勤小时数
-    }
-    
-    var 每年操作小时数: Float {
-        var x: Float = 0
-        for item in checkItems {
-            x += item.每年操作小时数
-        }
-        return x
-    }
     var 备注: String = ""
 }
 
@@ -296,6 +222,23 @@ struct TaskItem: Codable, Equatable, Hashable, Identifiable {
         每年操作小时数 * 配备文员数
     }
 
+    func 该组需要技师人数(_ 每位技师每年应出勤小时数: Float) -> Float {
+        配备技师每年总工时 / 每位技师每年应出勤小时数
+    }
+    func 该组需要护士人数(_ 每位护士每年应出勤小时数: Float) -> Float {
+        配备护士每年总工时 / 每位护士每年应出勤小时数
+    }
+    func 该组需要医师人数(_ 每位医师每年应出勤小时数: Float) -> Float {
+        //print("\(操作组名称) 配备医师每年总工时 \(配备医师每年总工时)")
+        return 配备医师每年总工时 / 每位医师每年应出勤小时数
+    }
+    func 该组需要治疗师人数(_ 每位治疗师每年应出勤小时数: Float) -> Float {
+        配备治疗师每年总工时 / 每位治疗师每年应出勤小时数
+    }
+    func 该组需要文员人数(_ 每位文员每年应出勤小时数: Float) -> Float {
+        配备文员每年总工时 / 每位文员每年应出勤小时数
+    }
+    
 }
 
 
@@ -404,43 +347,59 @@ struct Element: Codable, Equatable, Hashable, Identifiable {
     }
     
     //ghi
-    
     var 各操作组共需医师人数: Float {
         var n:Float = 0
-        for each in operatorUnits {
-            n += each.该组需要医师人数(每位医师每年实际出勤总工时)
+        for ou in operatorUnits {
+            for each in ou.checkItems {
+                n += each.该组需要医师人数(每位医师每年实际出勤总工时)
+            }
         }
         return n
     }
+//    var 各操作组共需医师人数: Float {
+//        var n:Float = 0
+//        for each in operatorUnits {
+//            n += each.该组需要医师人数(每位医师每年实际出勤总工时)
+//        }
+//        return n
+//    }
     
     var 各操作组共需护士人数: Float {
         var n:Float = 0
-        for each in operatorUnits {
-            n += each.该组需要护士人数(每位护士每年实际出勤总工时)
+        for ou in operatorUnits {
+            for each in ou.checkItems {
+                n += each.该组需要护士人数(每位护士每年实际出勤总工时)
+            }
         }
         return n
     }
     
     var 各操作组共需技师人数: Float {
         var n:Float = 0
-        for each in operatorUnits {
-            n += each.该组需要技师人数(每位技师每年实际出勤总工时)
+        for ou in operatorUnits {
+            for each in ou.checkItems {
+                n += each.该组需要技师人数(每位技师每年实际出勤总工时)
+            }
         }
         return n
     }
     
     var 各操作组共需治疗师人数: Float {
         var n:Float = 0
-        for each in operatorUnits {
-            n += each.该组需要治疗师人数(每位治疗师每年实际出勤总工时)
+        for ou in operatorUnits {
+            for each in ou.checkItems {
+                n += each.该组需要治疗师人数(每位治疗师每年实际出勤总工时)
+            }
         }
         return n
     }
     
     var 各操作组共需文员人数: Float {
         var n:Float = 0
-        for each in operatorUnits {
-            n += each.该组需要文员人数(每位文员每年实际出勤总工时)
+        for ou in operatorUnits {
+            for each in ou.checkItems {
+                n += each.该组需要文员人数(每位文员每年实际出勤总工时)
+            }
         }
         return n
     }
