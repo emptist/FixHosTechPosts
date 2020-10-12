@@ -18,6 +18,7 @@
 		480A631724CDB73000037D9E /* DetailAddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480A631624CDB73000037D9E /* DetailAddItem.swift */; };
 		4811B7E724CFB66E00FE1267 /* DeviceUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */; };
 		4811B7E924CFD96100FE1267 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4811B7E824CFD96100FE1267 /* Department.swift */; };
+		481877742533EEA600A7F9E9 /* ReportOnDoctTech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481877732533EEA600A7F9E9 /* ReportOnDoctTech.swift */; };
 		482599B5251F308E00238927 /* ReportOnNurse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482599B4251F308E00238927 /* ReportOnNurse.swift */; };
 		483CDD9A24E671BB008DC49C /* DutyUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483CDD9924E671BB008DC49C /* DutyUnits.swift */; };
 		48793FFE24D00852003B317F /* OperateUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48793FFD24D00852003B317F /* OperateUnits.swift */; };
@@ -52,6 +53,7 @@
 		480A631624CDB73000037D9E /* DetailAddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAddItem.swift; sourceTree = "<group>"; };
 		4811B7E624CFB66E00FE1267 /* DeviceUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUnits.swift; sourceTree = "<group>"; };
 		4811B7E824CFD96100FE1267 /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		481877732533EEA600A7F9E9 /* ReportOnDoctTech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportOnDoctTech.swift; sourceTree = "<group>"; };
 		482599B4251F308E00238927 /* ReportOnNurse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportOnNurse.swift; sourceTree = "<group>"; };
 		483CDD9924E671BB008DC49C /* DutyUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutyUnits.swift; sourceTree = "<group>"; };
 		48793FFD24D00852003B317F /* OperateUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperateUnits.swift; sourceTree = "<group>"; };
@@ -88,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		481877752533F39600A7F9E9 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				481877732533EEA600A7F9E9 /* ReportOnDoctTech.swift */,
+				482599B4251F308E00238927 /* ReportOnNurse.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
 		48F759D424EBF10000F84E34 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +182,7 @@
 				480A631624CDB73000037D9E /* DetailAddItem.swift */,
 				48AF0D1F24CEC2A300265A44 /* OperationGroup.swift */,
 				48793FFD24D00852003B317F /* OperateUnits.swift */,
-				482599B4251F308E00238927 /* ReportOnNurse.swift */,
+				481877752533F39600A7F9E9 /* Reports */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48AE217724D2FF1600FA9B37 /* DetailAddRoom.swift in Sources */,
+				481877742533EEA600A7F9E9 /* ReportOnDoctTech.swift in Sources */,
 				480A630924CD877800037D9E /* ElementList.swift in Sources */,
 				483CDD9A24E671BB008DC49C /* DutyUnits.swift in Sources */,
 				480A630F24CD88F500037D9E /* MainView.swift in Sources */,
