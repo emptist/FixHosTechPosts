@@ -64,7 +64,7 @@ struct NavigationTab: View {
                 
                 Group {
                     
-                    ReportOnDoctTech(elementIndex: selectedIndex)
+                    ReportOnTechView(elementIndex: selectedIndex)
                         .tabItem { Text("医技定编报告")}
                     
                     ReportOnNurse(elementIndex: selectedIndex)

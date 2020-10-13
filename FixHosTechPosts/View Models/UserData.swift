@@ -22,7 +22,8 @@ final class UserData: ObservableObject {
 
     func saveReport() -> Void {
         for each in elements { //where each.目前护士人数 > 0 && each.临床护士定编人数 > 0 {
-            each.saveReportOnNurse()
+            each.saveReportOnTech()
+            //each.saveReportOnNurse()
         }
     }
 
@@ -99,10 +100,14 @@ final class UserData: ObservableObject {
 
 
 extension Element {
+    func saveReportOnTech() -> Void {
+        let filename = "\(name).techs.txt"
+        saveReport(reportOnTech, to: filename)
+    }
+    
     func saveReportOnNurse() -> Void {
         if !name.contains("之") && !["中医科","急诊科"].contains(name) {
             let filename = "\(name).nurse.txt"
-            
             saveReport(reportOnNurse, to: filename)
         }
         
