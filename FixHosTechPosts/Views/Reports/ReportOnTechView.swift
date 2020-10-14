@@ -33,20 +33,20 @@ struct ReportOnTechView: View {
 extension Element {
     var reportOnTech: String {
         """
-        \(reportOnDoctorTitle)
-        \(reportOnDoctorHead)
-        \(reportOnDoctorBody)
-        \(reportOnDoctorFoot)
+        \(reportOnTechTitle)
+        \(reportOnTechHead)
+        \(reportOnTechBody)
+        \(reportOnTechFoot)
         """
     }
     
-    var reportOnDoctorTitle: String {
+    var reportOnTechTitle: String {
         """
         \(科室名称)临床医师定编
         
         """
     }
-    var reportOnDoctorHead: String {
+    var reportOnTechHead: String {
         """
         由于多数科室业务受疫情影响严重，本次定编工作将主要根据2019年的业务数据，並结合科主任访谈，来建议未来1年的编制。
         本科室现有医师\(Int(目前医生人数))人，技师\(Int(目前技师人数 ?? 0))人，护士\(Int(目前护士人数 ))人，文员\(Int(目前文员人数 ?? 0))人。
@@ -55,7 +55,7 @@ extension Element {
     }
     
     //@ViewBuilder
-    var reportOnDoctorBody: String {
+    var reportOnTechBody: String {
         reportOfRoomUnits +
         reportOfDeviceUnits +
         reportOfOperationUnits +
@@ -68,24 +68,24 @@ extension Element {
         var table = ""
         for each in roomUnits where each.needed {
             table += """
-            \(each.doctorLine)
+            \(each.techLine)
             """
         }
         if table.isEmpty {
             return ""
         }
         
-        table = "诊室名称\t医师人数\t技师人数\t护士人数\t文员人数\t每天小时\t每月天数\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n" + table
-        
+        let headline = "诊室名称\t医师人数\t技师人数\t护士人数\t文员人数\t每天小时\t每月天数\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n"
+            
         return """
-        根据本科室特点，采用按诊室组定编方法。计算要点为：
+        \n按诊室分组定编方法，计算要点为：
         
         \t某类人员人数 = 全年各诊室本类人员总计服务人小时 / 全年本类人员单人实际可出勤总小时数
         
-        诊室分组如下：
-        \(table)
+        各诊室分组如下：
+        \(headline + table)
         
-        按诊室合计所需人数为
+        各诊室合计所需人数为
         医师\(各诊室组共需医师人数)人
         技师\(各诊室组共需技师人数)人
         护士\(各诊室组共需护士人数)人
@@ -94,27 +94,31 @@ extension Element {
     }
     
     var reportOfDeviceUnits: String {
+        if deviceUnits.isEmpty {
+            return ""
+        }
+        
         var table = ""
         for each in deviceUnits where each.needed {
             table += """
-            \(each.doctorLine)
+            \(each.techLine)
             """
         }
         if table.isEmpty {
             return ""
         }
         
-        table = "设备名称\t医师人数\t技师人数\t护士人数\t文员人数\t每天开放小时\t每年开放小时\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n" + table
+        let headline = "设备名称\t医师人数\t技师人数\t护士人数\t文员人数\t每天小时\t每年小时\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n"
         
         return """
-        根据本科室特点，采用按诊室组定编方法。计算要点为：
+        \n按器械设备分组定编方法，计算要点为：
         
-        \t某类人员人数 = 全年各诊室本类人员总计服务人小时 / 全年本类人员单人实际可出勤总小时数
+        \t某类人员人数 = 全年各器械设备本类人员总计服务人小时 / 全年本类人员单人实际可出勤总小时数
         
-        分组如下：
-        \(table)
+        各器械设备组罗列如下：
+        \(headline + table)
         
-        各组合计所需人数为
+        各器械设备组合计所需人数为
         医师\(各设备组共需医师人数)人
         技师\(各设备组共需技师人数)人
         护士\(各设备组共需护士人数)人
@@ -129,23 +133,25 @@ extension Element {
         }
         
         var table = ""
-        table += "业务内容\t医师人数\t技师人数\t护士人数\t文员人数\t每次分钟\t全年次数\t医师总小时\t技师总小时\t护士总小时\t文员总小时\t备注\n"
         for ou in operatorUnits {
             for each in ou.checkItems where each.needed {
                 table += each.techLine
             }
         }
+        if table.isEmpty {
+            return ""
+        }
+        
+        let headline = "业务\t医师人数\t技师人数\t护士人数\t文员人数\t每次分钟\t全年次数\t医师总小时\t技师总小时\t护士总小时\t文员总小时\t备注\n"
         return """
         
-        业务分组须配备人员
-        
-        为了满足全年需要，而需要配备的医师人头数，计算逻辑为：
+        \n按业务分组配备人员，计算逻辑为：
         
         \t人数 = 每年合计占用人小时数 / 全年单人实际可出勤总小时数
         
-        根据业务类型，列表如下：
+        业务分组列表如下：
         
-        \(table)
+        \(headline + table)
         据此完成全年以上业务项目合计分别需要：
         医师\(各操作组共需医师人数)人，
         技师\(各操作组共需技师人数)人，
@@ -163,22 +169,22 @@ extension Element {
         var table = ""
         for each in dutyGroups where each.needed {
             table += """
-            \(each.doctorLine)
+            \(each.techLine)
             """
         }
         if table.isEmpty {
             return ""
         }
         
-        table = "班次名称\t医师人数\t技师人数\t护士人数\t文员人数\t每班小时\t每周天数\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n" + table
+        let headline = "班次名称\t医师人数\t技师人数\t护士人数\t文员人数\t每班小时\t每周天数\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n"
         
         return """
-        根据排班进行定编。计算要点为：
+        \n根据排班进行定编。计算要点为：
         
         \t某类人员人数 = 全年各诊室本类人员总计服务人小时 / 全年本类人员单人实际可出勤总小时数
         
         排班分组如下：
-        \(table)
+        \(headline + table)
         
         各组合计所需人数为
         医师\(各排班组共需医师人数)人
@@ -189,10 +195,10 @@ extension Element {
         
     }
     
-    var reportOnDoctorFoot: String {
+    var reportOnTechFoot: String {
         let conclusion = """
-        定编考虑管理机动人数， 取整数则各系列定编为：
-        医师： \(Int(定编医师人数.rounded()))人，技师： \(Int(定编技师人数 .rounded()))人，护士： \(Int(定编护士人数.rounded()))人，文员：\(Int(定编文员人数.rounded()))人。
+        综合考虑排班、机动等因素之后， 取整数则各系列定编为：
+        医师： \(Int(定编医师人数.rounded()))人，技师： \(Int(定编技师人数 .rounded()))人，护士： \(Int(定编护士人数.rounded()))人，文员： \(Int(定编文员人数.rounded()))人。
         """
         guard let 政策规范 = 政策法规 else {
             return """
@@ -209,22 +215,22 @@ extension Element {
         注：\(已经确认 ? "已经" : "尚未")访谈
         """
     }
-    
-    
 }
 
 
 extension ComplexDutyGroup {
     var needed: Bool {
-        let sum = (配备医师数 ?? 0) +
-            (配备技师数 ?? 0) +
-            // 怪事：加上下一行就不行
-            //(配备护士数 ?? 0) +
-            (配备文员数 ?? 0)
-        
+        let ndo = 配备医师数 ?? 0
+        let nte = 配备技师数 ?? 0
+        //let nnu = 配备护士数 ?? 0
+        let ncl = 配备文员数 ?? 0
+
+        let sum = ndo + nte + ncl //+ nnu
+
         return sum > 0 && (在班小时数 > 0)
     }
-    var doctorLine: String {
+    
+    var techLine: String {
         """
         \(name)\t\(Int(配备医师数 ?? 0))\t\(Int(配备技师数 ?? 0))\t\(Int(配备护士数 ?? 0))\t\(Int(配备文员数 ?? 0))\t\(在班小时数)\t\(每周排班天数)\t\(配备医师每年总工时)\t\(配备技师每年总工时)\t\(配备护士每年总工时)\t\(配备文员每年总工时)\t\(备注)\n
         """
@@ -238,7 +244,7 @@ extension RoomUnit {
         (配备技师数 + 配备医师数 + 配备护士数 + 配备文员数 > 0) && (每天开放小时 > 0)
     }
     
-    var doctorLine: String {
+    var techLine: String {
         if needed {
             return """
             \(诊室组名称)\t\(配备医师数)\t\(配备技师数)\t\(配备护士数)\t\(配备文员数)\t\(每天开放小时)\t\(每月开放天数)\t\(配备医师每年总工时)\t\(配备技师每年总工时)\t\(配备护士每年总工时)\t\(配备文员每年总工时)\t\(备注)\n
@@ -255,7 +261,7 @@ extension DeviceUnit {
     var needed: Bool {
         ((配备技师数 + 配备医师数 + 配备护士数 + 配备文员数) > 0)
     }
-    var doctorLine: String {
+    var techLine: String {
         """
         \(设备组名称)\t\(配备医师数)\t\(配备技师数)\t\(配备护士数)\t\(配备文员数)\t\(每天开放小时)\t\(每年开放小时数)\t\(配备医师每年总工时)\t\(配备技师每年总工时)\t\(配备护士每年总工时)\t\(配备文员每年总工时)\t\(备注)\n
         """
@@ -273,25 +279,23 @@ extension TaskItem {
         """
 
     }
-//    var doctorLine: String {
-//        """
-//        \(项目名称)\t\(配备医师数)\t\(配备技师数)\t\(每次所需分钟)\t\(年总次数)\t\(配备医师每年总工时)\t\(配备技师每年总工时)\t\(备注)\n
-//        """
-//    }
-
 }
 
 
-//Protocol UsefulUnit {
-//    var needed: Bool
+//protocol UtilizedUnit {
+//    var needed: Bool { get }
 //}
 //
-//extension UsefulUnit {
+//extension UtilizedUnit {
 //    var needed: Bool {
-//        let sum = (配备医师数 ?? 0) +
-//            (配备技师数 ?? 0) +
-//            (配备护士数 ?? 0) +
-//            (配备文员数 ?? 0)
+//        let ndo = 配备医师数 ?? 0
+//        let nte = 配备技师数 ?? 0
+//        let nnu = 配备护士数 ?? 0
+//        let ncl = 配备文员数 ?? 0
+//
+//        // 怪事：加上护士就不行
+//        let sum = ndo + nte + nnu + ncl
+//
 //        return sum > 0 && (在班小时数 > 0)
 //    }
 //}

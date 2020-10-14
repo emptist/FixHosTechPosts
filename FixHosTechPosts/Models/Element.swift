@@ -78,7 +78,7 @@ struct RoomUnit: Codable, Equatable, Hashable, Identifiable {
     var 配备文员数: Float
     
     var 每年开放小时数: Float {
-        每天开放小时 * 每月开放天数 * 12
+        房间数 * 每天开放小时 * 每月开放天数 * 12
     }
     
     var 配备技师每年总工时: Float {
