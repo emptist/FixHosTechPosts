@@ -59,9 +59,20 @@ extension Element {
         reportOfRoomUnits +
         reportOfDeviceUnits +
         reportOfOperationUnits +
-        reportOfDutyUnits
+        reportOfDutyUnits +
+        reportOfSpecial
     }
     
+    var reportOfSpecial: String {
+        if "药学部" == 科室名称 {
+            return """
+            临床药学组药师定编：
+            根据行业规范和政策要求，三甲医院每百张床配置1名临床药学药师，至少配置5人，期望未来几年随着医院发展，按照1000张病床配置10名药师。
+            检测组药师定编：
+            目前2位药师，基本适应工作需要，本次定编维持2人。
+            """
+        }
+    }
     
     var reportOfRoomUnits: String {
         
@@ -198,7 +209,7 @@ extension Element {
     var reportOnTechFoot: String {
         let conclusion = """
         综合考虑排班、机动等因素之后， 取整数则各系列定编为：
-        医师： \(Int(定编医师人数.rounded()))人，技师： \(Int(定编技师人数 .rounded()))人，护士： \(Int(定编护士人数.rounded()))人，文员： \(Int(定编文员人数.rounded()))人。
+        医师： \(Int(定编医师人数.rounded()))人，技师： \(Int(定编技师人数.rounded()))人，护士： \(Int(定编护士人数.rounded()))人，文员： \(Int(定编文员人数.rounded()))人。
         """
         guard let 政策规范 = 政策法规 else {
             return """

@@ -16,6 +16,7 @@ struct DutyGroupView: View {
         VStack(alignment:.leading) {
             ScrollView {
                 //Text("根据工作排班分组的定编计算方法 \(elementIndex)")
+                Text("各排班组共需技师人数:\(self.userData.elements[self.elementIndex].各排班组共需技师人数)")
                 DutyUnits(elementIndex: self.elementIndex)
             }
             Spacer()

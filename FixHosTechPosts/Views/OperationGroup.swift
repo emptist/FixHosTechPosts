@@ -23,7 +23,7 @@ struct OperationGroup: View {
                                 Text("\(unit.操作组名称)").font(.body).foregroundColor(.purple)
                                 //TextField("备注",text: $unit.备注)
                             }
-                            
+                            Text("各操作组共需技师人数:\(self.userData.elements[self.elementIndex].各操作组共需技师人数)")
                             
                             OperateUnits(elementIndex:self.elementIndex,operatorUnit: unit)
                             Spacer()
