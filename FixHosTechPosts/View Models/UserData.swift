@@ -25,6 +25,10 @@ final class UserData: ObservableObject {
             each.saveReportOnTech()
             //each.saveReportOnNurse()
         }
+        // todo
+        // merge and convert, using Pandoc
+        // pandoc -s -f markdown -t odt *.techs.md -o techs.odt --reference-doc=style_reference.odt
+
     }
 
     func operatorUnitsAt(_ elementIndex: Int) -> [OperatorUnit] {
@@ -101,19 +105,20 @@ final class UserData: ObservableObject {
 
 extension Element {
     func saveReportOnTech() -> Void {
-        let filename = "\(name).techs.txt"
-        saveReport(reportOnTech, to: filename)
+        //let filename = "\(name).techs.txt"
+        let filename = "\(name).techs.md"
+        writeReport(reportOnTech, to: filename)
     }
     
     func saveReportOnNurse() -> Void {
         if !name.contains("之") && !["中医科","急诊科"].contains(name) {
             let filename = "\(name).nurse.txt"
-            saveReport(reportOnNurse, to: filename)
+            writeReport(reportOnNurse, to: filename)
         }
         
     }
     
-    func saveReport(_ report: String, to filename: String) -> Void {
+    func writeReport(_ report: String, to filename: String) -> Void {
         do {
             try report.write(to: URL(fileURLWithPath: filename), atomically: true, encoding: .utf8)
         }
