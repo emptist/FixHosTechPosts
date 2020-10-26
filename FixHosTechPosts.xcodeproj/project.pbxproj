@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		482599B5251F308E00238927 /* ReportOnNurse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482599B4251F308E00238927 /* ReportOnNurse.swift */; };
 		483CDD9A24E671BB008DC49C /* DutyUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483CDD9924E671BB008DC49C /* DutyUnits.swift */; };
 		48793FFE24D00852003B317F /* OperateUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48793FFD24D00852003B317F /* OperateUnits.swift */; };
+		48AB7D1D254133B8009452A9 /* SwiftShell in Frameworks */ = {isa = PBXBuildFile; productRef = 48AB7D1C254133B8009452A9 /* SwiftShell */; };
 		48AE217724D2FF1600FA9B37 /* DetailAddRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE217624D2FF1600FA9B37 /* DetailAddRoom.swift */; };
 		48AE217924D3106300FA9B37 /* RoomGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE217824D3106300FA9B37 /* RoomGroup.swift */; };
 		48AE217B24D3119E00FA9B37 /* RoomUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE217A24D3119E00FA9B37 /* RoomUnits.swift */; };
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48AB7D1D254133B8009452A9 /* SwiftShell in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +99,13 @@
 				482599B4251F308E00238927 /* ReportOnNurse.swift */,
 			);
 			path = Reports;
+			sourceTree = "<group>";
+		};
+		48AB7D1E2541346C009452A9 /* Shell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shell;
 			sourceTree = "<group>";
 		};
 		48F759D424EBF10000F84E34 /* extensions */ = {
@@ -126,6 +135,7 @@
 		48FA2DDF24C9C6CA009EA536 /* FixHosTechPosts */ = {
 			isa = PBXGroup;
 			children = (
+				48AB7D1E2541346C009452A9 /* Shell */,
 				48F759D424EBF10000F84E34 /* extensions */,
 				48FA2DF424C9C6FD009EA536 /* Views */,
 				48FA2DF524C9C709009EA536 /* View Models */,
@@ -211,6 +221,9 @@
 			dependencies = (
 			);
 			name = FixHosTechPosts;
+			packageProductDependencies = (
+				48AB7D1C254133B8009452A9 /* SwiftShell */,
+			);
 			productName = FixHosTechPosts;
 			productReference = 48FA2DDD24C9C6CA009EA536 /* FixHosTechPosts.app */;
 			productType = "com.apple.product-type.application";
@@ -239,6 +252,9 @@
 				Base,
 			);
 			mainGroup = 48FA2DD424C9C6CA009EA536;
+			packageReferences = (
+				48AB7D1B254133B8009452A9 /* XCRemoteSwiftPackageReference "SwiftShell" */,
+			);
 			productRefGroup = 48FA2DDE24C9C6CA009EA536 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -495,6 +511,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48AB7D1B254133B8009452A9 /* XCRemoteSwiftPackageReference "SwiftShell" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:kareman/SwiftShell.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48AB7D1C254133B8009452A9 /* SwiftShell */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48AB7D1B254133B8009452A9 /* XCRemoteSwiftPackageReference "SwiftShell" */;
+			productName = SwiftShell;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48FA2DD524C9C6CA009EA536 /* Project object */;
 }

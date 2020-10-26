@@ -9,16 +9,12 @@
 import SwiftUI
 
 var md: Bool = true
+var ppt: Bool = false
 
 struct ReportOnTechView: View {
     @EnvironmentObject var userData: UserData
     @State var name: String = ""
-    
-    //var element:Element
     var elementIndex: Int
-    //    {
-    //        userData.elements.firstIndex(where: { $0.id == element.id })!
-    //    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,7 +29,10 @@ struct ReportOnTechView: View {
 
 
 extension Element {
-    var md: Bool { true }
+    var titleMark: String {
+        let mdMark: String = ppt ? "\n#" : "\n##"
+        return md ? mdMark : ""
+    }
     
     var reportOnTech: String {
         """
@@ -46,10 +45,10 @@ extension Element {
     
     var reportOnTechTitle: String {
         """
-        \(md ? "\n" : "")
-        \(md ? "##" : "") \(科室名称)定编
+        \(titleMark)\(科室名称)定编
         """
     }
+    
     var reportOnTechHead: String {
         """
         由于多数科室业务受疫情影响严重，本次定编工作将主要根据2019年的业务数据，並结合科主任访谈，来建议未来1年的编制。
@@ -130,7 +129,13 @@ extension Element {
             return ""
         }
         
-        let headline = "设备名称\t医师人数\t技师人数\t护士人数\t文员人数\t每天小时\t每年小时\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n"
+        let headline = md ? """
+        
+        : 根据设备配置人员表
+
+        |设备名称|医师人数|技师人数|护士人数|文员人数|每天小时|每年小时|医师人小时|技师人小时|护士人小时|文员人小时|备注|
+        |:------|:-----|-----:|------:|-----:|------:|-----:|-------:|--------:|------:|-------:|:--:|
+        """ : "设备名称\t医师人数\t技师人数\t护士人数\t文员人数\t每天小时\t每年小时\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n"
         
         return """
         \n按器械设备分组定编方法，计算要点为：
@@ -160,7 +165,10 @@ extension Element {
             return ""
         }
         
-        let headline = "业务\t医师人数\t技师人数\t护士人数\t文员人数\t每次分钟\t全年次数\t医师总小时\t技师总小时\t护士总小时\t文员总小时\t备注\n"
+        let headline = md ? """
+        |业务|医师人数|技师人数|护士人数|文员人数|每次分钟|全年次数|医师总小时|技师总小时|护士总小时|文员总小时|备注 |
+        |:--|------:|-----:|------:|-----:|-----:|------:|-------:|-------:|-------:|-------:|:---:|
+        """ : "业务\t医师人数\t技师人数\t护士人数\t文员人数\t每次分钟\t全年次数\t医师总小时\t技师总小时\t护士总小时\t文员总小时\t备注\n"
         return """
         
         \n按业务分组配备人员，计算逻辑为：
@@ -190,7 +198,10 @@ extension Element {
             return ""
         }
         
-        let headline = "班次名称\t医师人数\t技师人数\t护士人数\t文员人数\t每班小时\t每周天数\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n"
+        let headline = md ? """
+        |班次名称|医师人数|技师人数|护士人数|文员人数|每班小时|每周天数|医师人小时|技师人小时|护士人小时|文员人小时|备注 |
+        |:-----|------:|-----:|------:|------:|-----:|-----:|-------:|-------:|-------:|-------:|:---:|
+        """ : "班次名称\t医师人数\t技师人数\t护士人数\t文员人数\t每班小时\t每周天数\t医师人小时\t技师人小时\t护士人小时\t文员人小时\t备注\n"
         
         return """
         \n根据排班进行定编。计算要点为：
@@ -241,6 +252,10 @@ extension ComplexDutyGroup {
     }
     
     var techLine: String {
+//        guard needed else {
+//            return ""
+//        }
+//        return """
         """
         \(name)\t\(Int(配备医师数 ?? 0))\t\(Int(配备技师数 ?? 0))\t\(Int(配备护士数 ?? 0))\t\(Int(配备文员数 ?? 0))\t\(在班小时数)\t\(每周排班天数)\t\(配备医师每年总工时)\t\(配备技师每年总工时)\t\(配备护士每年总工时)\t\(配备文员每年总工时)\t\(备注)\n
         """

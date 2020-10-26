@@ -31,7 +31,11 @@ struct NavigationPrimary: View {
             
             HStack {
                 Button(action: {
-                    self.userData.saveReport()
+                    guard let selectedElement = self.selectedElement else {
+                        return self.userData.saveReport()
+                    }
+                    self.userData.saveReport(selectedElement)
+                    //self.userData.saveReport()
                 }) {
                     Text("S")
                 }

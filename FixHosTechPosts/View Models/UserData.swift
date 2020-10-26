@@ -8,7 +8,7 @@
 
 import Combine
 import SwiftUI
-
+import SwiftShell
 
 final class UserData: ObservableObject {
     @Published var showKeysOnly = false
@@ -20,6 +20,18 @@ final class UserData: ObservableObject {
         }
     }
 
+    func saveReport(_ element: Element) -> Void {
+        //element.saveReportOnNurse()
+        element.saveReportOnTech()
+//        let pandocSwift = """
+//        /usr/local/bin/pandoc -s -f markdown -t odt *.techs.md -o techswift.odt --reference-doc=style_reference.odt
+//        """
+        let pandocSwift = "/usr/local/bin/pandoc --version"
+        //runAsyncAndPrint("ls")
+        let _ = runAsyncAndPrint(bash: pandocSwift)
+        // /bin/bash: /usr/local/bin/pandoc: Operation not permitted
+    }
+    
     func saveReport() -> Void {
         for each in elements { //where each.目前护士人数 > 0 && each.临床护士定编人数 > 0 {
             each.saveReportOnTech()
@@ -111,7 +123,7 @@ extension Element {
     }
     
     func saveReportOnNurse() -> Void {
-        if !name.contains("之") && !["中医科","急诊科"].contains(name) {
+        if !name.contains("之") {
             let filename = "\(name).nurse.txt"
             writeReport(reportOnNurse, to: filename)
         }
