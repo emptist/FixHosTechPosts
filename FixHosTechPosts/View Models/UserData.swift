@@ -10,6 +10,14 @@ import Combine
 import SwiftUI
 import SwiftShell
 
+/// Creating A PDF File
+/// pandoc -s -f markdown -t html *.techs.md -o techs.pdf --metadata title="report"
+/// open techs.pdf
+///
+/// Creating A ODT File
+/// pandoc -s -f markdown -t odt *.techs.md -o techs.odt --reference-doc=style_reference.odt
+///
+
 final class UserData: ObservableObject {
     @Published var showKeysOnly = false
     @Published var elements = elementData {
